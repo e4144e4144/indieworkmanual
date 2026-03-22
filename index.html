@@ -24,6 +24,13 @@
         .tag-google { background: #0056b3; }
         .tag-income { background: #6f42c1; }
         .red-text { color: #d63031; font-weight: bold; }
+        
+        .flow-chart { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+        .flow-step { background: #fff; border: 2px solid #0056b3; border-radius: 8px; padding: 15px; position: relative; display: flex; align-items: center; }
+        .flow-step::after { content: '▼'; position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%); color: #0056b3; font-size: 12px; }
+        .flow-step:last-child::after { content: ''; }
+        .step-date { background: #0056b3; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; margin-right: 15px; min-width: 80px; text-align: center; }
+        .step-content { flex-grow: 1; }
     </style>
 </head>
 <body>
@@ -36,12 +43,33 @@
         レシート1枚ずつの報告は廃止です。<strong>「1ヶ月分をカテゴリーごとにまとめて合計金額で報告」</strong>してください。
     </div>
 
+    <h2>📅 1ヶ月の精算スケジュール</h2>
+    <div class="flow-chart">
+        <div class="flow-step">
+            <div class="step-date">月初〜末日</div>
+            <div class="step-content"><b>レシートの保管：</b>カテゴリーごとに分けて保管しておく。</div>
+        </div>
+        <div class="flow-step">
+            <div class="step-date">翌月1日〜3日</div>
+            <div class="step-content"><b>集計と報告：</b>Googleフォームからカテゴリーごとに合計額を報告。</div>
+        </div>
+        <div class="flow-step">
+            <div class="step-date">25日頃</div>
+            <div class="step-content"><b>入金確認：</b>報酬と合算で入金。</div>
+        </div>
+    </div>
+
     <a href="https://forms.gle/eYyCgMtLQb4MG3Rb9" class="btn-link" target="_blank">📲 報告用 Google フォームはこちら</a>
 
     <div class="danger-box">
-        <span class="warning-title">🚨 【超重要】ガソリン代レシートの混入厳禁</span>
-        基準燃料費を超えない<strong>「個人的なガソリン代」のレシートは、絶対に報告（写真撮影）に混ぜないでください。</strong><br>
-        これらは個人の経費ですので、ご自身のアプリで「車両費」として登録し、レシートも個人で保管してください。
+        <span class="warning-title">🚨 【絶対遵守】カテゴリーが違うものは「一緒に買わない」</span>
+        <strong>区分け（カテゴリー）が違うものは、レシートを分けてください。</strong><br>
+        1枚のレシートに複数のカテゴリーが混ざると、集計ミスや精算トラブルの原因になります。レジでは必ず<strong>「会計を分けて」</strong>レシートを別々に受け取ってください。
+    </div>
+
+    <div class="danger-box" style="border-color: #d63031;">
+        <span class="warning-title">🚨 個人的なガソリン代レシートの混入厳禁</span>
+        基準燃料費を超えない<strong>「個人的なガソリン代」</strong>は、絶対に報告に混ぜないでください。ご自身のアプリで「車両費」として登録し、個人で保管してください。
     </div>
 
     <h2>📂 1. カテゴリー別 負担区分（フォーム項目順）</h2>
@@ -108,44 +136,41 @@
 
     <h2>💡 2. 貸方の使い分け（「事業主借」と「現金」の違い）</h2>
     <div class="example-box">
-        立替払いや経費を支払った際、アプリの<strong>「貸方（支払元）」</strong>は以下のように使い分けます。
         <ul>
-            <li><strong>事業主借：</strong> <span class="highlight">自分の財布（プライベートな現金・カード）</span>から支払った場合。ほとんどの立替はこちらになります。</li>
-            <li><strong>現金 / 普通預金：</strong> アプリに登録している<span class="highlight">「事業用の財布・口座」</span>から直接支払った場合。</li>
+            <li><strong>事業主借：</strong> <span class="highlight">自分の財布</span>から支払った場合。基本はこちら。</li>
+            <li><strong>現金 / 普通預金：</strong> <span class="highlight">「事業用の財布・口座」</span>から直接支払った場合。</li>
         </ul>
-        ※基本的には、自分の財布から出しているはずなので<strong>「事業主借」</strong>を選べば間違いありません。
     </div>
 
     <h2>✍️ 3. 会計アプリでの具体的な仕訳例</h2>
-
-    <div class="info-tag tag-iw">例1：IndieWorkへ請求する場合（旅費交通費）</div>
+    <div class="info-tag tag-iw">例1：IndieWorkへ請求（旅費交通費）</div>
     <div class="example-box">
-        <strong>借方：</strong> <span class="highlight">立替金</span> 15,000円 ／ <strong>貸方：</strong> <span class="highlight">事業主借</span> 15,000円<br>
-        <strong>備考：</strong> ○月分旅費交通費 合計
+        (借) <span class="highlight">立替金</span> 15,000円 ／ (貸) <span class="highlight">事業主借</span> 15,000円
     </div>
 
-    <div class="info-tag tag-iw">例2：IndieWorkへ請求する場合（食事手当）</div>
+    <div class="info-tag tag-google">例2：Googleへ請求（車両費）</div>
     <div class="example-box">
-        <strong>借方：</strong> <span class="highlight">立替金</span> 12,000円 ／ <strong>貸方：</strong> <span class="highlight">事業主借</span> 12,000円<br>
-        <strong>備考：</strong> ○月分食事手当 合計
+        (借) <span class="highlight">立替金</span> 20,000円 ／ (貸) <span class="highlight">事業主借</span> 20,000円
     </div>
 
-    <div class="info-tag tag-google">例3：Googleへ請求する場合（車両費）</div>
+    <div class="info-tag tag-income">例3：報酬と立替金が入金された時</div>
     <div class="example-box">
-        <strong>借方：</strong> <span class="highlight">立替金</span> 20,000円 ／ <strong>貸方：</strong> <span class="highlight">事業主借</span> 20,000円<br>
-        <strong>備考：</strong> ○月分車両費（Google負担メンテ代等）
+        1. 報酬分：(借) 普通預金 ／ (貸) <strong>売上高</strong><br>
+        2. 立替分：(借) 普通預金 ／ (貸) <span class="highlight">立替金</span>
     </div>
 
-    <div class="info-tag tag-income">例4：報酬と立替金がまとめて入金された時</div>
+    <h2>🙋‍♂️ よくある質問（Q&A）</h2>
     <div class="example-box">
-        <strong>1. 報酬分：</strong> (借) 普通預金 300,000円 ／ (貸) <strong>売上高</strong> 300,000円<br>
-        <strong>2. 立替分：</strong> (借) 普通預金 60,000円 ／ (貸) <span class="highlight">立替金</span> 60,000円
-    </div>
-
-    <div class="info-tag">（番外）自分の経費にする場合（自己負担）</div>
-    <div class="example-box">
-        <strong>借方：</strong> <span class="highlight">車両費</span> 8,000円 ／ <strong>貸方：</strong> <span class="highlight">事業主借</span> 8,000円<br>
-        <strong>※注意：基準燃料費 未満のガソリン代です。報告フォームには絶対に入れないでください。</strong>
+        <strong>Q1. コンビニで「自分のお菓子」と「レターパック」を一緒に買いたい。</strong><br>
+        A. <span class="red-text">絶対に一緒に買わないでください。</span>会計を分けて、自分用のレシートと仕事用のレターパックのレシートを別々に受け取ってください。<br><br>
+        <strong>Q2. 食事とSIMカードを同じお店で買ったら？</strong><br>
+        A. カテゴリーが「食事手当」と「通信費」で分かれるため、これも会計を分けてレシートを2枚にしてください。<br><br>
+        <strong>Q3. 自分のガソリン代（基準内）のレシートはどうする？</strong><br>
+        A. 報告フォームには入れず、自分のアプリに「車両費」として付けるだけ。レシートも自分で管理してください。<br><br>
+        <strong>Q4. 会計アプリの「貸方」が「現金」になってる。</strong><br>
+        A. 自分の財布から出したなら<strong>「事業主借」</strong>に修正してください。<br><br>
+        <strong>Q5. 25日に入金された金額が計算と合わない！</strong><br>
+        A. 「報酬」と「立替精算金」が混ざっています。例3のように分けて入力すれば合います。
     </div>
 
     <div class="warning-box">
@@ -155,7 +180,3 @@
             <li><strong>「車両費」の使い分け：</strong> 自身のアプリで「車両費」を使うのは、<strong>自己負担のガソリン代のみ</strong>です。Google負担分はすべて「立替金」です。</li>
         </ol>
     </div>
-</div>
-
-</body>
-</html>
