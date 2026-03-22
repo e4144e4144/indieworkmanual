@@ -37,46 +37,63 @@
     <a href="https://forms.gle/eYyCgMtLQb4MG3Rb9" class="btn-link" target="_blank">📲 報告用 Google フォームはこちら</a>
 
     <h2>📸 1. 経費の負担区分と報告ルール</h2>
-    <p>誰が負担する経費かによって、報告先と科目が変わります。</p>
     <table>
         <thead>
             <tr>
-                <th>Googleフォームの項目</th>
-                <th>主な内容</th>
+                <th style="width: 25%;">Googleフォーム項目</th>
+                <th>主な内容（例）</th>
                 <th>負担元</th>
-                <th>自身の会計アプリ</th>
+                <th>会計アプリ</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>旅費交通費</strong></td>
-                <td>駐車場、高速、宿泊、フェリー(通常輸送分)、ガソリン(基準超え)</td>
+                <td><strong>旅費交通費<br><span style="color:blue;">(インボイスあり)</span></strong></td>
+                <td>
+                    <strong>T番号(登録番号)があるレシート</strong><br>
+                    ・駐車場、高速、宿泊、飛行機、新幹線<br>
+                    ・フェリー（通常輸送分）<br>
+                    ・ガソリン（基準燃料費を超えた分）
+                </td>
                 <td class="burden-iw">IndieWork負担</td>
-                <td><strong>立替金</strong>で登録</td>
+                <td><strong>立替金</strong></td>
+            </tr>
+            <tr>
+                <td><strong>旅費交通費<br><span style="color:red;">(インボイスなし)</span></strong></td>
+                <td>
+                    <strong>T番号(登録番号)がないレシート</strong><br>
+                    ・個人経営の駐車場、番号未記載の公共交通機関<br>
+                    ・フェリー（通常輸送分）
+                </td>
+                <td class="burden-iw">IndieWork負担</td>
+                <td><strong>立替金</strong></td>
             </tr>
             <tr>
                 <td><strong>食事手当</strong></td>
-                <td>食事代（※10%として集計）</td>
+                <td>・食事手当（8%・10%混在可。報告は10%で合算）</td>
                 <td class="burden-iw">IndieWork負担</td>
-                <td><strong>立替金</strong>で登録</td>
+                <td><strong>立替金</strong></td>
             </tr>
             <tr>
                 <td><strong>車両費</strong></td>
-                <td>メンテナンス代、修理代、フェリー(Google依頼分)</td>
+                <td>
+                    ・メンテナンス代、修理代<br>
+                    ・フェリー車両輸送代（Google依頼分）
+                </td>
                 <td class="burden-google">Google負担</td>
-                <td><strong>立替金</strong>で登録</td>
+                <td><strong>立替金</strong></td>
             </tr>
             <tr>
                 <td><strong>荷造運搬費 / 通信費 / 雑費</strong></td>
-                <td>レターパック、宅急便、SIMカード代、その他</td>
+                <td>・レターパック、宅急便、SIM代、その他諸経費</td>
                 <td class="burden-iw">IndieWork負担</td>
-                <td><strong>立替金</strong>で登録</td>
+                <td><strong>立替金</strong></td>
             </tr>
             <tr style="background-color: #fff5f5;">
-                <td><span class="burden-self">（報告不要）</span></td>
-                <td>日常走行分のガソリン代（基準燃料費 未満）</td>
+                <td><strong>（報告不要）</strong></td>
+                <td>・日常走行分のガソリン代（基準燃料費 未満）</td>
                 <td class="burden-self">自己負担</td>
-                <td><strong>車両費</strong>で登録</td>
+                <td><strong>車両費</strong></td>
             </tr>
         </tbody>
     </table>
@@ -92,7 +109,7 @@
     <div class="example-box">
         <strong>例：1ヶ月の駐車場・高速代の合計が15,000円だった場合</strong><br>
         <strong>借方：</strong> <span class="highlight">立替金</span> 15,000円 ／ <strong>貸方：</strong> 事業主借 15,000円<br>
-        <strong>備考：</strong> 3月分旅費交通費 合計（フォーム入力分）
+        <strong>備考：</strong> 3月分旅費交通費 合計（インボイス有無は分けて入力）
     </div>
 
     <div class="info-tag">自分の経費にする場合（自己負担分）</div>
