@@ -40,41 +40,59 @@
     <div class="danger-box">
         <span class="warning-title">🚨 【超重要】ガソリン代レシートの混入厳禁</span>
         基準燃料費を超えない<strong>「個人的なガソリン代」のレシートは、絶対に報告（写真撮影）に混ぜないでください。</strong><br>
-        これらは皆さんの「個人の経費」ですので、ご自身のアプリで「車両費」として登録し、レシートも個人で保管してください。
+        これは皆さんの「個人の経費」ですので、ご自身のアプリで「車両費」として登録し、レシートも個人で保管してください。
     </div>
 
-    <h2>📂 1. カテゴリー別の負担区分</h2>
+    <h2>📂 1. カテゴリー別の負担区分（フォーム項目通り）</h2>
     <table>
         <thead>
             <tr>
                 <th style="width: 25%;">Googleフォーム項目</th>
-                <th>内容（例）</th>
+                <th>主な内容（例）</th>
                 <th>負担元</th>
                 <th>会計アプリ</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>旅費交通費<br>(インボイス有/無)</strong></td>
-                <td>駐車場、高速、宿泊、フェリー(通常輸送)、ガソリン(基準超)等</td>
+                <td><strong>旅費交通費<br>(インボイスあり)</strong></td>
+                <td>T番号がある駐車場・高速・宿泊・フェリー(通常)・ガソリン(基準超)等</td>
+                <td style="color:#2d8e47; font-weight:bold;">IndieWork負担</td>
+                <td><strong>立替金</strong></td>
+            </tr>
+            <tr>
+                <td><strong>旅費交通費<br>(インボイスなし)</strong></td>
+                <td>T番号がない個人駐車場、フェリー(通常)等</td>
                 <td style="color:#2d8e47; font-weight:bold;">IndieWork負担</td>
                 <td><strong>立替金</strong></td>
             </tr>
             <tr>
                 <td><strong>食事手当</strong></td>
-                <td>食事代（※10%で合算）</td>
+                <td>食事代（※8%・10%混在OK。報告は10%で合算）</td>
                 <td style="color:#2d8e47; font-weight:bold;">IndieWork負担</td>
                 <td><strong>立替金</strong></td>
             </tr>
             <tr>
                 <td><strong>車両費</strong></td>
-                <td>メンテ代、修理代、フェリー(Google依頼分)</td>
+                <td>オイル交換等のメンテ代、修理代、フェリー(Google依頼分)</td>
                 <td style="color:#0056b3; font-weight:bold;">Google負担</td>
                 <td><strong>立替金</strong></td>
             </tr>
             <tr>
-                <td><strong>荷造・通信・雑費</strong></td>
-                <td>レターパック、宅急便、SIM代、その他諸経費</td>
+                <td><strong>荷造運搬費</strong></td>
+                <td>レターパック、宅急便代</td>
+                <td style="color:#2d8e47; font-weight:bold;">IndieWork負担</td>
+                <td><strong>立替金</strong></td>
+            </tr>
+            <tr>
+                <td><strong>通信費</strong></td>
+                <td>SIMカード代</td>
+                <td style="color:#2d8e47; font-weight:bold;">IndieWork負担</td>
+                <td><strong>立替金</strong></td>
+            </tr>
+            <tr>
+                <td><strong>雑費</strong></td>
+                <td>上記以外の諸経費</td>
                 <td style="color:#2d8e47; font-weight:bold;">IndieWork負担</td>
                 <td><strong>立替金</strong></td>
             </tr>
@@ -87,7 +105,7 @@
     <div class="example-box">
         <strong>例：1ヶ月の駐車場・高速代の合計が 15,000円 だった場合</strong><br>
         <strong>借方：</strong> <span class="highlight">立替金</span> 15,000円 ／ <strong>貸方：</strong> 事業主借 15,000円<br>
-        <strong>備考：</strong> ○月分旅費交通費（駐車場・高速等）
+        <strong>備考：</strong> ○月分旅費交通費 合計（インボイス有無は分けて報告）
     </div>
 
     <div class="info-tag tag-iw">例2：IndieWorkへ請求する場合（食事手当）</div>
@@ -99,14 +117,14 @@
 
     <div class="info-tag tag-google">例3：Googleへ請求する場合（車両費）</div>
     <div class="example-box">
-        <strong>例：タイヤ交換やGoogle依頼のフェリー代が 20,000円 の場合</strong><br>
+        <strong>例：タイヤ交換や修理代が 20,000円 の場合</strong><br>
         <strong>借方：</strong> <span class="highlight">立替金</span> 20,000円 ／ <strong>貸方：</strong> 事業主借 20,000円<br>
-        <strong>備考：</strong> ○月分車両費（Google負担メンテナンス等）
+        <strong>備考：</strong> ○月分車両費（Google負担メンテ代等）
     </div>
 
     <div class="info-tag tag-income">例4：報酬と立替金がまとめて入金された時</div>
     <div class="example-box">
-        <strong>例：報酬 30万円 ＋ 立替精算金（合計） 6万円 が振り込まれた場合</strong><br>
+        <strong>例：報酬 30万円 ＋ 立替精算金 6万円 が振り込まれた場合</strong><br>
         <strong>1. 報酬分：</strong> (借) 普通預金 300,000円 ／ (貸) <strong>売上高</strong> 300,000円<br>
         <strong>2. 立替分：</strong> (借) 普通預金 60,000円 ／ (貸) <span class="highlight">立替金</span> 60,000円<br>
         <strong>備考：</strong> ○月分報酬および立替精算金の受取
@@ -114,16 +132,16 @@
 
     <div class="info-tag">（番外）自分の経費にする場合（自己負担）</div>
     <div class="example-box">
-        <strong>例：自己負担（基準燃料費 未満）のガソリン代 8,000円 の場合</strong><br>
+        <strong>例：基準燃料費 未満のガソリン代 8,000円 の場合</strong><br>
         <strong>借方：</strong> <span class="highlight">車両費</span> 8,000円 ／ <strong>貸方：</strong> 事業主借 8,000円<br>
-        <strong>※注意：立替フォーム報告には絶対に含めないこと。レシートも混ぜないでください。</strong>
+        <strong>※注意：立替フォーム報告には絶対に含めないこと。レシートも混ぜない。</strong>
     </div>
 
     <div class="warning-box">
         <span class="warning-title">⚠️ 徹底事項</span>
         <ol>
-            <li><strong>宛名は「IndieWork合同会社」：</strong> 領収書は必ずこの名前でもらってください。</li>
-            <li><strong>「車両費」の使い分け：</strong> 自身のアプリで「車両費」を使うのは、<strong>自己負担のガソリン代のみ</strong>です。Google負担のメンテナンス代などは「立替金」で処理してください。</li>
+            <li><strong>宛名は「IndieWork合同会社」：</strong> 領収書は必ずこの名前で。</li>
+            <li><strong>「車両費」の使い分け：</strong> 自身のアプリで「車両費」を使うのは、<strong>自己負担のガソリン代のみ</strong>です。Google負担のメンテ代などはすべて「立替金」です。</li>
         </ol>
     </div>
 </div>
