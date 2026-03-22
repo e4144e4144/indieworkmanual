@@ -9,11 +9,11 @@
         .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h1 { color: #d63031; border-bottom: 3px solid #d63031; padding-bottom: 15px; text-align: center; margin-bottom: 30px; }
         h2 { background: #0056b3; color: white; padding: 12px 20px; border-radius: 6px; margin-top: 40px; }
-        .btn-link { display: block; width: 100%; text-align: center; background: #34a853; color: white; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin: 20px 0; transition: background 0.3s; }
-        .btn-link:hover { background: #2d8e47; }
+        .btn-link { display: block; width: 100%; text-align: center; background: #34a853; color: white; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin: 20px 0; transition: background 0.3s; box-shadow: 0 4px 0 #2d8e47; }
+        .btn-link:hover { background: #2d8e47; transform: translateY(2px); box-shadow: 0 2px 0 #2d8e47; }
         .highlight { background-color: #fff3cd; padding: 3px 6px; font-weight: bold; border-radius: 4px; color: #d9534f; }
         table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9em; }
-        th, td { border: 1px solid #dee2e6; padding: 12px; text-align: left; }
+        th, td { border: 1px solid #dee2e6; padding: 12px; text-align: left; vertical-align: top; }
         th { background-color: #e9ecef; color: #495057; }
         .warning-box { background: #fff5f5; border: 2px solid #ffc9c9; padding: 20px; border-radius: 8px; margin: 30px 0; }
         .warning-title { color: #d63031; font-weight: bold; font-size: 1.2em; margin-bottom: 10px; display: block; }
@@ -28,15 +28,15 @@
     
     <div class="warning-box">
         <span class="warning-title">【重要】「レシート1枚ずつの報告」は廃止します</span>
-        今後、個別のレシートごとの報告はいりません。<strong>「1ヶ月分をカテゴリーごとにまとめて合計金額で報告」</strong>してください。
+        個別レシートごとの報告はいりません。<strong>「1ヶ月分をカテゴリーごとにまとめて合計金額で報告」</strong>してください。
     </div>
 
     <a href="https://forms.gle/eYyCgMtLQb4MG3Rb9" class="btn-link" target="_blank">📲 報告用 Google フォームはこちら</a>
 
     <h2>📸 1. まとめ方・撮影ルール</h2>
     <ul>
-        <li><strong>科目ごとに集計：</strong>「旅費交通費」「食事手当」など、用途別に1ヶ月分を合算してください。</li>
-        <li><strong>まとめて撮影：</strong>A4用紙1枚分くらいのスペースにレシートを並べて撮影。入り切らない場合は2〜3枚に分かれてもOKです。</li>
+        <li><strong>項目ごとに集計：</strong>「旅費交通費」「食事手当」など、下記の表に従って1ヶ月分を合算してください。</li>
+        <li><strong>まとめて撮影：</strong>A4用紙1枚分くらいのスペースにレシートを並べて撮影。入り切らない場合は2〜3枚に分かれてもOK。</li>
         <li><strong>食事手当の税率：</strong>8%と10%が混ざっている場合は、<span class="highlight">すべて「10%」として合算</span>して報告してください。</li>
     </ul>
 
@@ -45,48 +45,54 @@
     <table>
         <thead>
             <tr>
-                <th>カテゴリー</th>
-                <th>対象内容</th>
+                <th>Googleフォームの項目名</th>
+                <th>主な対象内容</th>
                 <th>会計アプリの科目</th>
-                <th>立替フォーム</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>旅費交通費(インボイス有)</strong></td>
-                <td>駐車場、高速、宿泊等（T番号あり）</td>
+                <td><strong>旅費交通費</strong><br>(インボイス有無は別々に報告)</td>
+                <td>
+                    ・ガソリン代（基準超え分のみ）<br>
+                    ・駐車場代、高速代、宿泊代<br>
+                    ・公共交通機関、新幹線、飛行機<br>
+                    ・<strong>フェリー車両輸送代（通常輸送分）</strong>
+                </td>
                 <td><strong>立替金</strong></td>
-                <td><strong>入力する</strong></td>
-            </tr>
-            <tr>
-                <td><strong>旅費交通費(インボイス無)</strong></td>
-                <td>登録番号がないレシート（個人駐車場等）</td>
-                <td><strong>立替金</strong></td>
-                <td><strong>入力する</strong></td>
             </tr>
             <tr>
                 <td><strong>食事手当</strong></td>
-                <td>食事代（8%・10%混在可）</td>
+                <td>・食事手当（8%・10%混在可。報告は10%で）</td>
                 <td><strong>立替金</strong></td>
-                <td><strong>入力する</strong></td>
             </tr>
             <tr>
-                <td><strong>車両費（メンテ）</strong></td>
-                <td>オイル・タイヤ交換、修理（Google負担分）</td>
-                <td><strong>立替金</strong></td>
-                <td><strong>入力する</strong></td>
-            </tr>
-            <tr>
-                <td><strong>荷造・通信・雑費</strong></td>
-                <td>フェリー、配送料、SIM代、その他</td>
-                <td><strong>立替金</strong></td>
-                <td><strong>入力する</strong></td>
-            </tr>
-            <tr>
-                <td><strong>ガソリン（基準内）</strong></td>
-                <td>日常走行分（自己負担分）</td>
                 <td><strong>車両費</strong></td>
-                <td><span style="color:red; font-weight:bold;">入力しない</span></td>
+                <td>
+                    ・メンテナンス代、修理代<br>
+                    ・<strong>フェリー車両輸送代（Google依頼分）</strong>
+                </td>
+                <td><strong>立替金</strong></td>
+            </tr>
+            <tr>
+                <td><strong>荷造運搬費</strong></td>
+                <td>・レターパック、宅急便代</td>
+                <td><strong>立替金</strong></td>
+            </tr>
+            <tr>
+                <td><strong>通信費</strong></td>
+                <td>・SIMカード代</td>
+                <td><strong>立替金</strong></td>
+            </tr>
+            <tr>
+                <td><strong>雑費</strong></td>
+                <td>・上記以外の諸経費</td>
+                <td><strong>立替金</strong></td>
+            </tr>
+            <tr>
+                <td><span style="color:red;">（報告不要）</span></td>
+                <td>・日常走行分のガソリン代（基準燃料費 未満）</td>
+                <td><strong>車両費</strong></td>
             </tr>
         </tbody>
     </table>
@@ -95,33 +101,23 @@
 
     <div class="info-tag">会社に請求する場合（フォームに入力した内容）</div>
     <div class="example-box">
-        <strong>例：1ヶ月の駐車場代・高速代の合計が15,000円だった場合</strong><br>
+        <strong>例：1ヶ月の駐車場・高速・ガソリン(基準超)の合計が15,000円だった場合</strong><br>
         <strong>借方：</strong> <span class="highlight">立替金</span> 15,000円 ／ <strong>貸方：</strong> 事業主借 15,000円<br>
-        <strong>備考：</strong> 3月分旅費交通費（駐車場・高速代）合計
+        <strong>備考：</strong> 3月分旅費交通費 合計
     </div>
 
     <div class="info-tag">自分の経費にする場合（フォーム入力不要）</div>
     <div class="example-box">
-        <strong>例：基準燃料費 未満のガソリン代が 8,000円 だった場合</strong><br>
+        <strong>例：基準燃料費 未満のガソリン代 8,000円 の場合</strong><br>
         <strong>借方：</strong> <span class="highlight">車両費</span> 8,000円 ／ <strong>貸方：</strong> 事業主借 8,000円<br>
-        <strong>備考：</strong> 3月分ガソリン代（自己負担分）<br>
-        <strong>※注意：立替フォームには絶対に入力しないでください。</strong>
-    </div>
-
-    <div class="info-tag">報酬と立替金が振り込まれた時（例：報酬30万＋立替金6万）</div>
-    <div class="example-box">
-        <strong>仕訳1（報酬分）：</strong><br>
-        (借) 普通預金 300,000円 ／ (貸) <strong>売上高</strong> 300,000円<br><br>
-        <strong>仕訳2（立替返金分）：</strong><br>
-        (借) 普通預金 60,000円 ／ (貸) <span class="highlight">立替金</span> 60,000円<br>
-        <strong>備考：</strong> 3月分立替精算の受取（総額）
+        <strong>備考：</strong> 3月分ガソリン代（自己負担分）
     </div>
 
     <div class="warning-box">
         <span class="warning-title">⚠️ 徹底事項</span>
         <ol>
             <li><strong>宛名は「IndieWork合同会社」：</strong> 領収書は必ずこの名前で。</li>
-            <li><strong>車両費の使い分け：</strong> 自分のアプリで「車両費」を使うのは<strong>自己負担ガソリン代のみ</strong>です。Google負担分のメンテ代は「立替金」です。</li>
+            <li><strong>車両費の使い分け：</strong> 自分のアプリで「車両費」を使うのは<strong>自己負担ガソリン代のみ</strong>です。請求するメンテナンス代やフェリー代（Google依頼）は「立替金」です。</li>
         </ol>
     </div>
 </div>
