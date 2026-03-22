@@ -20,7 +20,6 @@
         .danger-box { background: #ffebeb; border: 2px solid #d63031; padding: 20px; border-radius: 8px; margin: 20px 0; }
         .example-box { border: 2px dashed #adb5bd; padding: 20px; background: #f8f9fa; margin-bottom: 15px; border-radius: 8px; }
         .info-tag { background: #6c757d; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-bottom: 10px; display: inline-block; }
-        .tag-iw { background: #2d8e47; }
         .tag-income { background: #6f42c1; }
         .red-text { color: #d63031; font-weight: bold; }
         
@@ -39,18 +38,19 @@
     
     <div class="warning-box">
         <span class="warning-title">【重要】精算方法の変更について</span>
-        レシート1枚ずつの報告は廃止です。<strong>「1ヶ月分をカテゴリーごとにまとめて合計金額で報告」</strong>してください。
+        レシート1枚ずつの報告は廃止です。<strong>「1ヶ月分をカテゴリーごとにまとめて合計金額で報告」</strong>してください。<br>
+        <small>※ただし、後述の「立替車両費」に該当するもの以外は、原則この一括報告ルールを適用します。</small>
     </div>
 
     <h2>📅 1ヶ月の精算スケジュール</h2>
     <div class="flow-chart">
         <div class="flow-step">
             <div class="step-date">月初〜24日</div>
-            <div class="step-content"><b>レシートの保管：</b>カテゴリー（旅費交通費、食事、車両等）ごとに分けて保管。</div>
+            <div class="step-content"><b>レシートの保管：</b>カテゴリーごとに分けて保管。</div>
         </div>
         <div class="flow-step">
             <div class="step-date" style="background-color: #d63031;">25日〜末日</div>
-            <div class="step-content"><b>集計と報告：</b>Googleフォームから報告。<b>必ずこの期間内に完了させてください。</b></div>
+            <div class="step-content"><b>集計と報告：</b>Googleフォームから報告。<b>必ずこの期間内に完了してください。</b></div>
         </div>
         <div class="flow-step">
             <div class="step-date">翌月上旬</div>
@@ -66,7 +66,8 @@
 
     <div class="danger-box">
         <span class="warning-title">🚨 【絶対遵守】カテゴリーが違うものは「一緒に買わない」</span>
-        <strong>区分けが違うものは、レシートを分けてください。</strong>1枚のレシートに複数のカテゴリーが混ざると集計ミスになります。レジでは必ず<strong>「会計を分けて」</strong>レシートを別々に受け取ってください。
+        <strong>区分け（カテゴリー）が違うものは、レシートを分けてください。</strong><br>
+        1枚のレシートに複数の内容が混ざると集計ミスになります。レジでは必ず<strong>「会計を分けて」</strong>レシートを別々に受け取ってください。
     </div>
 
     <div class="danger-box" style="border-color: #d63031;">
@@ -139,7 +140,7 @@
 
     <h2>📦 2. 原本回収ルール（3ヶ月に一度）</h2>
     <div class="example-box">
-        IndieWorkへ報告した原本は定期的に回収します。提出の際は以下を徹底してください：
+        IndieWorkへ報告した原本は定期的に回収します：
         <ul>
             <li><span class="red-text">台紙や紙には絶対に貼らないでください。</span></li>
             <li>カテゴリーごとに分け、<strong>「日付順」</strong>に並べる。</li>
@@ -149,27 +150,21 @@
 
     <h2>✍️ 3. 会計アプリでの具体的な仕訳例</h2>
 
-    <div class="info-tag">例1：カード・スマホ決済で立て替えた場合</div>
+    <div class="info-tag">例1：個人の財布やカードで立て替えた場合（基本）</div>
     <div class="example-box">
         (借) <span class="highlight">立替金</span> 10,000円 ／ (貸) <span class="highlight">事業主借</span> 10,000円<br>
         備考：○月分 旅費交通費 合計
     </div>
 
-    <div class="info-tag">例2：財布の「現金」で立て替えた場合</div>
-    <div class="example-box">
-        (借) <span class="highlight">立替金</span> 5,000円 ／ (貸) <span class="highlight">現金</span> 5,000円<br>
-        備考：○月分 食事手当 合計
-    </div>
-
     <div class="example-box" style="background-color: #eefbff; border: 1px solid #0056b3;">
-        <strong>💡 「事業主借」と「現金」の違いを簡単に解説</strong>
+        <strong>💡 「事業主借」と「現金」の正しい使い分け</strong>
         <ul>
-            <li><strong>事業主借：</strong> クレジットカード、PayPay、個人の銀行口座など「手元の現ナマ以外」で払ったときに使います。</li>
-            <li><strong>現金：</strong> 自分の財布から「お札や小銭」を直接出して払ったときに使います。</li>
+            <li><strong>事業主借：</strong> 個人の財布（プライベートなお金）や個人のカードで払ったときはこれを選びます。<strong>大半の立替はこれに該当します。</strong></li>
+            <li><strong>現金：</strong> 会計アプリ上で「仕事専用の財布（現金）」を管理している場合のみ使います。個人の財布から出したのに「現金」を選ぶと帳簿が合わなくなるので注意！</li>
         </ul>
     </div>
 
-    <div class="info-tag tag-income">例3：報酬と立替金が入金された時（翌月15日）</div>
+    <div class="info-tag tag-income">例2：報酬と立替金が入金された時（翌月15日）</div>
     <div class="example-box">
         <strong>（例：報酬30万円 ＋ 立替金精算6万円が入金された場合）</strong><br>
         1. 報酬分：(借) 普通預金 300,000円 ／ (貸) <strong>売上高</strong> 300,000円<br>
@@ -181,14 +176,14 @@
     <div class="example-box">
         <strong>Q1. コンビニで自分用と仕事用の買い物をしたい。</strong><br>
         A. <span class="red-text">絶対に一緒に買わないでください。</span>会計を分けて、別々のレシートを受け取ってください。<br><br>
-        <strong>Q2. 食事代の税率が混ざってしまった。</strong><br>
-        A. 本来は分けて集計しますが、どうしても混ざった場合は<strong>全て10%の方にまとめて</strong>報告してください。<br><br>
+        <strong>Q2. 「事業主借」と「現金」どっちを使えばいい？</strong><br>
+        A. 迷ったら<strong>「事業主借」</strong>にしてください。自分のプライベートなお金から出したことを意味します。<br><br>
         <strong>Q3. 自分のガソリン代（基準内）のレシートはどうする？</strong><br>
-        A. 報告不要ですが、確定申告で経費にするため大切に保管し、自身のアプリには「車両費」で入力してください。<br><br>
+        A. 報告不要ですが、自身の確定申告で経費にするため大切に保管し、自身のアプリには「車両費」で入力してください。<br><br>
         <strong>Q4. レシート原本はどう整理しておけばいい？</strong><br>
         A. 紙には貼らず、カテゴリーごとに日付順でクリップ留めしておいてください。<br><br>
         <strong>Q5. 15日に入金された金額が計算と合わない！</strong><br>
-        A. 報酬と立替精算金が合算されています。IndieWork発行の請求書を確認し、例3のように分けて入力してください。
+        A. 報酬と立替精算金が合算されています。IndieWork発行の請求書の内訳を確認し、例2のように分けて入力してください。
     </div>
 
     <div class="warning-box">
