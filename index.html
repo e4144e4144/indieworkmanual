@@ -19,6 +19,9 @@
         .warning-title { color: #d63031; font-weight: bold; font-size: 1.2em; margin-bottom: 10px; display: block; }
         .example-box { border: 2px dashed #adb5bd; padding: 20px; background: #f8f9fa; margin-bottom: 15px; border-radius: 8px; }
         .info-tag { background: #6c757d; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-bottom: 10px; display: inline-block; }
+        .burden-iw { color: #2d8e47; font-weight: bold; }
+        .burden-google { color: #0056b3; font-weight: bold; }
+        .burden-self { color: #d63031; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -27,97 +30,83 @@
     <h1>🚀 立替金精算・会計アプリ入力マニュアル</h1>
     
     <div class="warning-box">
-        <span class="warning-title">【重要】「レシート1枚ずつの報告」は廃止します</span>
-        個別レシートごとの報告はいりません。<strong>「1ヶ月分をカテゴリーごとにまとめて合計金額で報告」</strong>してください。
+        <span class="warning-title">【重要】精算方法の変更について</span>
+        今後、レシート1枚ずつの報告はいりません。<strong>「1ヶ月分をカテゴリーごとにまとめて合計金額で報告」</strong>してください。
     </div>
 
     <a href="https://forms.gle/eYyCgMtLQb4MG3Rb9" class="btn-link" target="_blank">📲 報告用 Google フォームはこちら</a>
 
-    <h2>📸 1. まとめ方・撮影ルール</h2>
-    <ul>
-        <li><strong>項目ごとに集計：</strong>「旅費交通費」「食事手当」など、下記の表に従って1ヶ月分を合算してください。</li>
-        <li><strong>まとめて撮影：</strong>A4用紙1枚分くらいのスペースにレシートを並べて撮影。入り切らない場合は2〜3枚に分かれてもOK。</li>
-        <li><strong>食事手当の税率：</strong>8%と10%が混ざっている場合は、<span class="highlight">すべて「10%」として合算</span>して報告してください。</li>
-    </ul>
-
-    <h2>📂 2. カテゴリーと勘定科目のルール</h2>
-    <p><strong>【ポイント】</strong> 会社に請求するものはすべて自身のアプリで<span class="highlight">「立替金」</span>で仕訳します。</p>
+    <h2>📸 1. 経費の負担区分と報告ルール</h2>
+    <p>誰が負担する経費かによって、報告先と科目が変わります。</p>
     <table>
         <thead>
             <tr>
-                <th>Googleフォームの項目名</th>
-                <th>主な対象内容</th>
-                <th>会計アプリの科目</th>
+                <th>Googleフォームの項目</th>
+                <th>主な内容</th>
+                <th>負担元</th>
+                <th>自身の会計アプリ</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>旅費交通費</strong><br>(インボイス有無は別々に報告)</td>
-                <td>
-                    ・ガソリン代（基準超え分のみ）<br>
-                    ・駐車場代、高速代、宿泊代<br>
-                    ・公共交通機関、新幹線、飛行機<br>
-                    ・<strong>フェリー車両輸送代（通常輸送分）</strong>
-                </td>
-                <td><strong>立替金</strong></td>
+                <td><strong>旅費交通費</strong></td>
+                <td>駐車場、高速、宿泊、フェリー(通常輸送分)、ガソリン(基準超え)</td>
+                <td class="burden-iw">IndieWork負担</td>
+                <td><strong>立替金</strong>で登録</td>
             </tr>
             <tr>
                 <td><strong>食事手当</strong></td>
-                <td>・食事手当（8%・10%混在可。報告は10%で）</td>
-                <td><strong>立替金</strong></td>
+                <td>食事代（※10%として集計）</td>
+                <td class="burden-iw">IndieWork負担</td>
+                <td><strong>立替金</strong>で登録</td>
             </tr>
             <tr>
                 <td><strong>車両費</strong></td>
-                <td>
-                    ・メンテナンス代、修理代<br>
-                    ・<strong>フェリー車両輸送代（Google依頼分）</strong>
-                </td>
-                <td><strong>立替金</strong></td>
+                <td>メンテナンス代、修理代、フェリー(Google依頼分)</td>
+                <td class="burden-google">Google負担</td>
+                <td><strong>立替金</strong>で登録</td>
             </tr>
             <tr>
-                <td><strong>荷造運搬費</strong></td>
-                <td>・レターパック、宅急便代</td>
-                <td><strong>立替金</strong></td>
+                <td><strong>荷造運搬費 / 通信費 / 雑費</strong></td>
+                <td>レターパック、宅急便、SIMカード代、その他</td>
+                <td class="burden-iw">IndieWork負担</td>
+                <td><strong>立替金</strong>で登録</td>
             </tr>
-            <tr>
-                <td><strong>通信費</strong></td>
-                <td>・SIMカード代</td>
-                <td><strong>立替金</strong></td>
-            </tr>
-            <tr>
-                <td><strong>雑費</strong></td>
-                <td>・上記以外の諸経費</td>
-                <td><strong>立替金</strong></td>
-            </tr>
-            <tr>
-                <td><span style="color:red;">（報告不要）</span></td>
-                <td>・日常走行分のガソリン代（基準燃料費 未満）</td>
-                <td><strong>車両費</strong></td>
+            <tr style="background-color: #fff5f5;">
+                <td><span class="burden-self">（報告不要）</span></td>
+                <td>日常走行分のガソリン代（基準燃料費 未満）</td>
+                <td class="burden-self">自己負担</td>
+                <td><strong>車両費</strong>で登録</td>
             </tr>
         </tbody>
     </table>
 
-    <h2>✍️ 3. 会計アプリでの具体的な仕訳例</h2>
-
-    <div class="info-tag">会社に請求する場合（フォームに入力した内容）</div>
-    <div class="example-box">
-        <strong>例：1ヶ月の駐車場・高速・ガソリン(基準超)の合計が15,000円だった場合</strong><br>
-        <strong>借方：</strong> <span class="highlight">立替金</span> 15,000円 ／ <strong>貸方：</strong> 事業主借 15,000円<br>
-        <strong>備考：</strong> 3月分旅費交通費 合計
+    <div class="warning-box">
+        <span class="warning-title">⚠️ 自己負担分のガソリン代について</span>
+        基準燃料費を超えないガソリン代は、皆さんの「個人の経費」となります。Googleフォームへの報告は<b>不要</b>です。ご自身の会計アプリで独自に<strong>「車両費」</strong>として登録し、所得の申告に役立ててください。
     </div>
 
-    <div class="info-tag">自分の経費にする場合（フォーム入力不要）</div>
+    <h2>✍️ 2. 会計アプリでの具体的な仕訳例</h2>
+
+    <div class="info-tag">会社に請求する場合（IndieWorkまたはGoogle負担）</div>
+    <div class="example-box">
+        <strong>例：1ヶ月の駐車場・高速代の合計が15,000円だった場合</strong><br>
+        <strong>借方：</strong> <span class="highlight">立替金</span> 15,000円 ／ <strong>貸方：</strong> 事業主借 15,000円<br>
+        <strong>備考：</strong> 3月分旅費交通費 合計（フォーム入力分）
+    </div>
+
+    <div class="info-tag">自分の経費にする場合（自己負担分）</div>
     <div class="example-box">
         <strong>例：基準燃料費 未満のガソリン代 8,000円 の場合</strong><br>
         <strong>借方：</strong> <span class="highlight">車両費</span> 8,000円 ／ <strong>貸方：</strong> 事業主借 8,000円<br>
-        <strong>備考：</strong> 3月分ガソリン代（自己負担分）
+        <strong>備考：</strong> 3月分ガソリン代（自己負担分・フォーム報告なし）
     </div>
 
     <div class="warning-box">
         <span class="warning-title">⚠️ 徹底事項</span>
         <ol>
-            <li><strong>宛名は「IndieWork合同会社」：</strong> 領収書は必ずこの名前で。</li>
-            <li><strong>車両費の使い分け：</strong> 自分のアプリで「車両費」を使うのは<strong>自己負担ガソリン代のみ</strong>です。請求するメンテナンス代やフェリー代（Google依頼）は「立替金」です。</li>
+            <li><strong>宛名は「IndieWork合同会社」：</strong> 領収書は必ずこの名前でもらってください。</li>
+            <li><strong>「車両費」の使い分け：</strong> 自身のアプリで「車両費」を使うのは、<strong>自己負担のガソリン代のみ</strong>です。Google負担のメンテナンス代などは「立替金」で処理してください。</li>
         </ol>
     </div>
 </div>
