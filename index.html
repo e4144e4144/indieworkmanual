@@ -29,7 +29,7 @@
         .flow-step { background: #fff; border: 2px solid #0056b3; border-radius: 8px; padding: 15px; position: relative; display: flex; align-items: center; }
         .flow-step::after { content: '▼'; position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%); color: #0056b3; font-size: 12px; }
         .flow-step:last-child::after { content: ''; }
-        .step-date { background: #0056b3; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; margin-right: 15px; min-width: 80px; text-align: center; }
+        .step-date { background: #0056b3; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; margin-right: 15px; min-width: 100px; text-align: center; }
         .step-content { flex-grow: 1; }
     </style>
 </head>
@@ -46,16 +46,20 @@
     <h2>📅 1ヶ月の精算スケジュール</h2>
     <div class="flow-chart">
         <div class="flow-step">
-            <div class="step-date">月初〜末日</div>
-            <div class="step-content"><b>レシートの保管：</b>カテゴリーごとに分けて保管しておく。</div>
+            <div class="step-date">月初〜24日</div>
+            <div class="step-content"><b>レシートの保管：</b>カテゴリーごとに分けて保管。</div>
         </div>
         <div class="flow-step">
-            <div class="step-date">翌月1日〜3日</div>
-            <div class="step-content"><b>集計と報告：</b>Googleフォームからカテゴリーごとに合計額を報告。</div>
+            <div class="step-date" style="background-color: #d63031;">25日〜末日</div>
+            <div class="step-content"><b>集計と報告：</b>Googleフォームから報告。<b>必ずこの期間内に完了。</b></div>
         </div>
         <div class="flow-step">
-            <div class="step-date">25日頃</div>
-            <div class="step-content"><b>入金確認：</b>報酬と合算で入金。</div>
+            <div class="step-date">翌月上旬</div>
+            <div class="step-content"><b>請求書発行：</b>IndieWorkが報告に基づき請求書を発行します。</div>
+        </div>
+        <div class="flow-step">
+            <div class="step-date">翌月15日</div>
+            <div class="step-content"><b>入金確認：</b>報酬と立替金が合算で入金されます。</div>
         </div>
     </div>
 
@@ -63,8 +67,7 @@
 
     <div class="danger-box">
         <span class="warning-title">🚨 【絶対遵守】カテゴリーが違うものは「一緒に買わない」</span>
-        <strong>区分け（カテゴリー）が違うものは、レシートを分けてください。</strong><br>
-        1枚のレシートに複数のカテゴリーが混ざると、集計ミスや精算トラブルの原因になります。レジでは必ず<strong>「会計を分けて」</strong>レシートを別々に受け取ってください。
+        <strong>区分けが違うものは、レシートを分けてください。</strong>1枚のレシートに複数が混ざると集計ミスに直結します。レジでは必ず<strong>「会計を分けて」</strong>レシートを別々に受け取ってください。
     </div>
 
     <div class="danger-box" style="border-color: #d63031;">
@@ -134,43 +137,52 @@
         </tbody>
     </table>
 
-    <h2>💡 2. 貸方の使い分け（「事業主借」と「現金」の違い）</h2>
+    <h2>✍️ 2. 会計アプリでの具体的な仕訳例</h2>
+
+    <div class="info-tag tag-iw">例1：IndieWorkへ請求（旅費交通費などの合計）</div>
     <div class="example-box">
-        <ul>
-            <li><strong>事業主借：</strong> <span class="highlight">自分の財布</span>から支払った場合。基本はこちら。</li>
-            <li><strong>現金 / 普通預金：</strong> <span class="highlight">「事業用の財布・口座」</span>から直接支払った場合。</li>
-        </ul>
+        (借) <span class="highlight">立替金</span> 15,000円 ／ (貸) <span class="highlight">事業主借</span> 15,000円<br>
+        <strong>備考：</strong> <span class="highlight">○月分 旅費交通費 合計</span>
     </div>
 
-    <h2>✍️ 3. 会計アプリでの具体的な仕訳例</h2>
-    <div class="info-tag tag-iw">例1：IndieWorkへ請求（旅費交通費）</div>
+    <div class="info-tag tag-iw">例2：IndieWorkへ請求（食事手当の合計）</div>
     <div class="example-box">
-        (借) <span class="highlight">立替金</span> 15,000円 ／ (貸) <span class="highlight">事業主借</span> 15,000円
+        (借) <span class="highlight">立替金</span> 12,000円 ／ (貸) <span class="highlight">事業主借</span> 12,000円<br>
+        <strong>備考：</strong> <span class="highlight">○月分 食事手当 合計</span>
     </div>
 
-    <div class="info-tag tag-google">例2：Googleへ請求（車両費）</div>
+    <div class="info-tag tag-google">例3：Googleへ請求（車両費：メンテ・修理代などの合計）</div>
     <div class="example-box">
-        (借) <span class="highlight">立替金</span> 20,000円 ／ (貸) <span class="highlight">事業主借</span> 20,000円
+        (借) <span class="highlight">立替金</span> 20,000円 ／ (貸) <span class="highlight">事業主借</span> 20,000円<br>
+        <strong>備考：</strong> <span class="highlight">○月分 車両費（Google負担） 合計</span>
     </div>
 
-    <div class="info-tag tag-income">例3：報酬と立替金が入金された時</div>
+    <div class="info-tag tag-income">例4：報酬と立替金がまとめて入金された時（翌月15日）</div>
     <div class="example-box">
-        1. 報酬分：(借) 普通預金 ／ (貸) <strong>売上高</strong><br>
-        2. 立替分：(借) 普通預金 ／ (貸) <span class="highlight">立替金</span>
+        <strong>IndieWork発行の請求書 内訳に基づき入力</strong><br>
+        1. 報酬分：(借) 普通預金 300,000円 ／ (貸) <strong>売上高</strong> 300,000円<br>
+        2. 立替分：(借) 普通預金 60,000円 ／ (貸) <span class="highlight">立替金</span> 60,000円<br>
+        <strong>備考：</strong> <span class="highlight">○月分報酬および立替精算金の受取</span>
+    </div>
+
+    <div class="info-tag">（番外）自分の経費にする場合（基準内のガソリン代）</div>
+    <div class="example-box">
+        (借) <span class="highlight">車両費</span> 8,000円 ／ (貸) <span class="highlight">事業主借</span> 8,000円<br>
+        <strong>備考：</strong> <span class="highlight">○月分 ガソリン代（自己負担分）</span>
     </div>
 
     <h2>🙋‍♂️ よくある質問（Q&A）</h2>
     <div class="example-box">
         <strong>Q1. コンビニで「自分のお菓子」と「レターパック」を一緒に買いたい。</strong><br>
-        A. <span class="red-text">絶対に一緒に買わないでください。</span>会計を分けて、自分用のレシートと仕事用のレターパックのレシートを別々に受け取ってください。<br><br>
-        <strong>Q2. 食事とSIMカードを同じお店で買ったら？</strong><br>
-        A. カテゴリーが「食事手当」と「通信費」で分かれるため、これも会計を分けてレシートを2枚にしてください。<br><br>
+        A. <span class="red-text">絶対に一緒に買わないでください。</span>会計を分けて、レシートを別々に受け取ってください。<br><br>
+        <strong>Q2. 25日〜末日の報告を忘れてしまいました。</strong><br>
+        A. 期間外の報告は受け付けられません。精算が翌々月になる可能性がありますので必ず期間内に報告してください。<br><br>
         <strong>Q3. 自分のガソリン代（基準内）のレシートはどうする？</strong><br>
         A. 報告フォームには入れず、自分のアプリに「車両費」として付けるだけ。レシートも自分で管理してください。<br><br>
         <strong>Q4. 会計アプリの「貸方」が「現金」になってる。</strong><br>
         A. 自分の財布から出したなら<strong>「事業主借」</strong>に修正してください。<br><br>
-        <strong>Q5. 25日に入金された金額が計算と合わない！</strong><br>
-        A. 「報酬」と「立替精算金」が混ざっています。例3のように分けて入力すれば合います。
+        <strong>Q5. 15日に入金された金額が計算と合わない！</strong><br>
+        A. 報酬と立替金が合算されています。IndieWork発行の請求書の内訳を確認し、例4のように分けて入力してください。
     </div>
 
     <div class="warning-box">
@@ -180,3 +192,7 @@
             <li><strong>「車両費」の使い分け：</strong> 自身のアプリで「車両費」を使うのは、<strong>自己負担のガソリン代のみ</strong>です。Google負担分はすべて「立替金」です。</li>
         </ol>
     </div>
+</div>
+
+</body>
+</html>
