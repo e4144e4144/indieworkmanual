@@ -5,32 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>立替金精算・会計アプリ入力マニュアル</title>
     <style>
-        /* ベース設定 */
+        /* ベース設定：スマホでも文字が小さくなりすぎないよう調整 */
         body { 
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; 
-            line-height: 1.7; 
+            line-height: 1.6; 
             color: #333; 
             margin: 0; 
             padding: 10px; 
             background-color: #f0f4f8; 
-            -webkit-text-size-adjust: 100%;
         }
         .container { 
-            max-width: 600px; 
+            max-width: 100%; 
             margin: 0 auto; 
             background: white; 
             padding: 20px 15px; 
             border-radius: 12px; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
         }
 
         /* 見出し */
         h1 { 
             color: #d63031; 
-            font-size: 1.4em; 
-            text-align: center; 
             border-bottom: 3px solid #d63031; 
             padding-bottom: 15px; 
+            text-align: center; 
+            font-size: 1.4em;
             margin-bottom: 25px; 
         }
         h2 { 
@@ -38,213 +37,237 @@
             color: white; 
             padding: 10px 15px; 
             border-radius: 6px; 
-            font-size: 1.1em; 
-            margin-top: 35px; 
+            margin-top: 30px; 
+            font-size: 1.1em;
         }
 
-        /* 警告・注目ボックス */
-        .warning-box { 
-            background: #fff5f5; 
-            border: 1.5px solid #ffc9c9; 
-            padding: 15px; 
-            border-radius: 8px; 
-            margin: 20px 0; 
-        }
-        .warning-title { 
-            color: #d63031; 
-            font-weight: bold; 
-            display: block; 
-            margin-bottom: 5px; 
-        }
-        .danger-box { 
-            background: #ffebeb; 
-            border-left: 5px solid #d63031; 
-            padding: 15px; 
-            border-radius: 4px; 
-            margin: 15px 0; 
-            font-size: 0.95em;
-        }
-
-        /* フローチャート */
-        .flow-chart { margin: 20px 0; }
-        .flow-step { 
-            border-left: 3px solid #0056b3; 
-            margin-left: 10px; 
-            padding: 0 0 20px 20px; 
-            position: relative; 
-        }
-        .flow-step::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            background: #0056b3;
-            border-radius: 50%;
-        }
-        .step-date { 
-            font-weight: bold; 
-            color: #0056b3; 
-            font-size: 0.9em; 
-            display: block; 
-            margin-bottom: 3px; 
-        }
-        .flow-step:last-child { border-left: none; }
-
-        /* ボタン */
+        /* リンクボタン：指で押しやすいサイズに */
         .btn-link { 
             display: block; 
+            width: 100%; 
+            box-sizing: border-box;
             text-align: center; 
             background: #34a853; 
             color: white; 
             padding: 18px; 
-            border-radius: 50px; 
+            border-radius: 8px; 
             text-decoration: none; 
             font-weight: bold; 
             font-size: 1.1em; 
-            margin: 25px 0; 
-            box-shadow: 0 4px 10px rgba(52, 168, 83, 0.3);
+            margin: 20px 0; 
+            box-shadow: 0 4px 0 #2d8e47; 
         }
 
-        /* カード型データ表示（スマホ用テーブル代替） */
-        .category-card {
-            background: #f8f9fa;
+        /* ボックス類 */
+        .highlight { background-color: #fff3cd; padding: 2px 4px; font-weight: bold; border-radius: 4px; color: #d9534f; }
+        .warning-box { background: #fff5f5; border: 2px solid #ffc9c9; padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .warning-title { color: #d63031; font-weight: bold; font-size: 1.1em; margin-bottom: 8px; display: block; }
+        .danger-box { background: #ffebeb; border: 2px solid #d63031; padding: 15px; border-radius: 8px; margin: 20px 0; font-size: 0.95em; }
+        .example-box { border: 2px dashed #adb5bd; padding: 15px; background: #f8f9fa; margin-bottom: 15px; border-radius: 8px; font-size: 0.95em; }
+        .info-tag { background: #6c757d; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8em; margin-bottom: 10px; display: inline-block; }
+        .tag-income { background: #6f42c1; }
+        .red-text { color: #d63031; font-weight: bold; }
+
+        /* スケジュール（縦並びのフローに変更） */
+        .flow-chart { margin: 20px 0; }
+        .flow-step { 
+            background: #fff; 
+            border: 2px solid #0056b3; 
+            border-radius: 8px; 
+            padding: 12px; 
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .flow-step::after { 
+            content: '▼'; 
+            position: absolute; 
+            bottom: -18px; 
+            left: 20px; 
+            color: #0056b3; 
+            font-size: 12px; 
+        }
+        .flow-step:last-child::after { content: ''; }
+        .step-date { 
+            background: #0056b3; 
+            color: white; 
+            padding: 2px 8px; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            display: inline-block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        /* スマホ用テーブル代替（カード形式） */
+        .data-card {
             border: 1px solid #dee2e6;
             border-radius: 8px;
-            padding: 15px;
             margin-bottom: 15px;
+            overflow: hidden;
         }
-        .card-header { 
-            font-weight: bold; 
-            border-bottom: 1px solid #ccc; 
-            padding-bottom: 5px; 
-            margin-bottom: 8px;
-            color: #0056b3;
+        .card-title {
+            background-color: #e9ecef;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            border-bottom: 1px solid #dee2e6;
         }
-        .card-row { display: flex; justify-content: space-between; font-size: 0.9em; margin-bottom: 3px;}
-        .card-label { color: #666; width: 80px; flex-shrink: 0; }
-        .card-value { flex-grow: 1; font-weight: 500; }
-
-        .highlight { background-color: #fff3cd; padding: 2px 4px; font-weight: bold; border-radius: 4px; color: #d9534f; }
-        .example-box { border: 1px dashed #adb5bd; padding: 15px; background: #fafafa; margin-bottom: 15px; border-radius: 8px; font-size: 0.9em; }
-        .info-tag { background: #6c757d; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8em; margin-bottom: 8px; display: inline-block; }
-        .red-text { color: #d63031; font-weight: bold; }
-        
-        ul { padding-left: 20px; margin: 10px 0; }
-        li { margin-bottom: 8px; }
-
+        .card-body { padding: 10px; font-size: 0.9em; }
+        .card-row { margin-bottom: 5px; display: flex; }
+        .label { font-weight: bold; min-width: 80px; color: #666; }
+        .value { flex: 1; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>🚀 立替金精算マニュアル</h1>
+    <h1>🚀 立替金精算・会計アプリ入力マニュアル</h1>
     
     <div class="warning-box">
-        <span class="warning-title">【重要】精算方法の変更</span>
-        レシート1枚ずつの報告は廃止です。<strong>「1ヶ月分をカテゴリーごとにまとめて合計金額で報告」</strong>してください。
+        <span class="warning-title">【重要】精算方法の変更について</span>
+        レシート1枚ずつの報告は廃止です。<strong>「1ヶ月分をカテゴリーごとにまとめて合計金額で報告」</strong>してください。<br>
+        <small>※後述の「立替車両費」に該当するもの以外は、原則この一括報告ルールを適用します。</small>
     </div>
 
-    <h2>📅 精算スケジュール</h2>
+    <h2>📅 1ヶ月の精算スケジュール</h2>
     <div class="flow-chart">
         <div class="flow-step">
-            <span class="step-date">月初〜24日</span>
-            <b>レシート保管：</b>カテゴリーごとに分けて大切に保管。
+            <div class="step-date">月初〜24日</div>
+            <div class="step-content"><b>レシートの保管：</b>カテゴリーごとに分けて保管。</div>
         </div>
         <div class="flow-step">
-            <span class="step-date" style="color: #d63031;">25日〜末日</span>
-            <b>集計・報告：</b>Googleフォームから送信。<br><small>※期間厳守でお願いします。</small>
+            <div class="step-date" style="background-color: #d63031;">25日〜末日</div>
+            <div class="step-content"><b>集計と報告：</b>Googleフォームから報告。<b>必ずこの期間内に完了してください。</b></div>
         </div>
         <div class="flow-step">
-            <span class="step-date">翌月上旬</span>
-            <b>請求書発行：</b>IndieWork発行の請求書を確認。
+            <div class="step-date">翌月上旬</div>
+            <div class="step-content"><b>請求書発行：</b>IndieWorkが請求書を発行。内容を確認してください。</div>
         </div>
         <div class="flow-step">
-            <span class="step-date">翌月15日</span>
-            <b>入金：</b>報酬と立替金が合算で入金されます。
+            <div class="step-date">翌月15日</div>
+            <div class="step-content"><b>入金確認：</b>報酬と立替金が合算で入金されます。</div>
         </div>
     </div>
 
-    <a href="https://forms.gle/eYyCgMtLQb4MG3Rb9" class="btn-link" target="_blank">📲 報告フォームを開く</a>
+    <a href="https://forms.gle/eYyCgMtLQb4MG3Rb9" class="btn-link" target="_blank">📲 報告用 Google フォームはこちら</a>
 
     <div class="danger-box">
-        <span class="warning-title">🚨 会計を絶対に分ける</span>
-        カテゴリーが違うものは、レジで必ず<strong>「別々に会計」</strong>してレシートを分けてください。
+        <span class="warning-title">🚨 【絶対遵守】カテゴリーが違うものは「一緒に買わない」</span>
+        <strong>区分け（カテゴリー）が違うものは、レシートを分けてください。</strong><br>
+        1枚のレシートに複数の内容が混ざると集計ミスになります。レジでは必ず<strong>「会計を分けて」</strong>レシートを別々に受け取ってください。
     </div>
 
-    <div class="danger-box">
-        <span class="warning-title">🚨 自身のガソリン代は「宝」</span>
-        基準内ガソリン代は、確定申告で経費にすれば税金が安くなります。<strong>絶対に捨てず、自身のアプリに入力してください。</strong>
+    <div class="danger-box" style="border-color: #d63031;">
+        <span class="warning-title">🚨 個人的なガソリン代（基準内）のレシートは宝物です</span>
+        基準燃料費に達しないガソリン代は報告不要ですが、<strong>確定申告で自身の経費として申請できるため、税金が安くなります。</strong><br>
+        <strong>絶対にレシートを捨てずに大切に保管し、自身のアプリに入力してください。</strong>
     </div>
 
-    <h2>📂 1. カテゴリー別ルール</h2>
+    <h2>📂 1. カテゴリー別 負担区分</h2>
 
-    <div class="category-card">
-        <div class="card-header">旅費交通費 (インボイスあり/なし)</div>
-        <div class="card-row"><span class="card-label">例</span><span class="card-value">駐車場、高速、宿泊、ガソリン(基準超)等</span></div>
-        <div class="card-row"><span class="card-label">負担</span><span class="card-value" style="color:#2d8e47;">IndieWork負担</span></div>
-        <div class="card-row"><span class="card-label">アプリ</span><span class="card-value">立替金</span></div>
+    <div class="data-card">
+        <div class="card-title">旅費交通費 (インボイスあり)</div>
+        <div class="card-body">
+            <div class="card-row"><div class="label">内容</div><div class="value">T番号あり：駐車場、高速、宿泊、新幹線、ガソリン(基準超)等</div></div>
+            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#2d8e47; font-weight:bold;">IndieWork負担</div></div>
+            <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
+        </div>
     </div>
 
-    <div class="category-card">
-        <div class="card-header">食事手当</div>
-        <div class="card-row"><span class="card-label">例</span><span class="card-value">食事代（混ざった場合は10%で集計）</span></div>
-        <div class="card-row"><span class="card-label">負担</span><span class="card-value" style="color:#2d8e47;">IndieWork負担</span></div>
-        <div class="card-row"><span class="card-label">アプリ</span><span class="card-value">立替金</span></div>
+    <div class="data-card">
+        <div class="card-title">旅費交通費 (インボイスなし)</div>
+        <div class="card-body">
+            <div class="card-row"><div class="label">内容</div><div class="value">T番号なし：個人駐車場、公共交通機関、フェリー(通常)等</div></div>
+            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#2d8e47; font-weight:bold;">IndieWork負担</div></div>
+            <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
+        </div>
     </div>
 
-    <div class="category-card">
-        <div class="card-header">車両費</div>
-        <div class="card-row"><span class="card-label">例</span><span class="card-value">メンテ、修理、車両輸送費（指示分）</span></div>
-        <div class="card-row"><span class="card-label">負担</span><span class="card-value" style="color:#0056b3;">Google負担</span></div>
-        <div class="card-row"><span class="card-label">アプリ</span><span class="card-value">立替金</span></div>
+    <div class="data-card">
+        <div class="card-title">食事手当（10% / 8%）</div>
+        <div class="card-body">
+            <div class="card-row"><div class="label">内容</div><div class="value">食事代（※混ざった場合は全て10%の方に入れて集計）</div></div>
+            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#2d8e47; font-weight:bold;">IndieWork負担</div></div>
+            <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
+        </div>
     </div>
 
-    <div class="category-card" style="border: 2px solid #ffc9c9;">
-        <div class="card-header" style="color: #d63031;">（報告不要）自己負担分</div>
-        <div class="card-row"><span class="card-label">例</span><span class="card-value">基準内のガソリン代など</span></div>
-        <div class="card-row"><span class="card-label">負担</span><span class="card-value" style="color:#d63031;">自己負担</span></div>
-        <div class="card-row"><span class="card-label">アプリ</span><span class="card-value">車両費</span></div>
+    <div class="data-card">
+        <div class="card-title">車両費</div>
+        <div class="card-body">
+            <div class="card-row"><div class="label">内容</div><div class="value">メンテナンス、修理、車両輸送費（Google依頼分）</div></div>
+            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#0056b3; font-weight:bold;">Google負担</div></div>
+            <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
+        </div>
     </div>
 
-    <h2>📦 2. 原本回収（3ヶ月に一度）</h2>
+    <div class="data-card" style="background-color: #fff5f5;">
+        <div class="card-title" style="color:#d63031;">（報告不要）</div>
+        <div class="card-body">
+            <div class="card-row"><div class="label">内容</div><div class="value" style="color:#d63031;">基準燃料費に達しない分のガソリン代</div></div>
+            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#d63031; font-weight:bold;">自己負担</div></div>
+            <div class="card-row"><div class="label">アプリ</div><div class="value" style="color:#d63031;"><strong>車両費</strong></div></div>
+        </div>
+    </div>
+
+    <h2>📦 2. 原本回収ルール（3ヶ月に一度）</h2>
     <div class="example-box">
+        IndieWorkへ報告した原本は定期的に回収します：
         <ul>
-            <li><span class="red-text">台紙には絶対に貼らない！</span></li>
-            <li>カテゴリー別に分け、日付順に並べる。</li>
-            <li>クリップで留めてまとめておく。</li>
+            <li><span class="red-text">台紙や紙には絶対に貼らないでください。</span></li>
+            <li>カテゴリーごとに分け、<strong>「日付順」</strong>に並べる。</li>
+            <li>カテゴリーごとに<strong>クリップで留めて</strong>まとめる。</li>
         </ul>
     </div>
 
-    <h2>✍️ 3. 会計アプリ入力例</h2>
+    <h2>✍️ 3. 会計アプリでの具体的な仕訳例</h2>
 
-    <div class="info-tag">例1：個人の財布で立て替えた時</div>
+    <div class="info-tag">例1：個人の財布やカードで立て替えた場合（基本）</div>
     <div class="example-box">
-        (借) <span class="highlight">立替金</span> ／ (貸) <span class="highlight">事業主借</span><br>
-        <small>※自分の財布やカードから出した場合はすべてこれです。</small>
+        (借) <span class="highlight">立替金</span> 10,000円 ／ (貸) <span class="highlight">事業主借</span> 10,000円<br>
+        備考：○月分 旅費交通費 合計
     </div>
 
-    <div class="info-tag">例2：精算金が入金された時（15日）</div>
-    <div class="example-box">
-        1. 報酬分：(貸) <strong>売上高</strong><br>
-        2. 立替分：(貸) <span class="highlight">立替金</span><br>
-        <small>※請求書の内訳通りに2行に分けて入力！</small>
+    <div class="example-box" style="background-color: #eefbff; border: 1px solid #0056b3;">
+        <strong>💡 「事業主借」と「現金」の正しい使い分け</strong>
+        <ul style="padding-left: 18px;">
+            <li><strong>事業主借：</strong> 個人の財布（プライベートなお金）や個人のカードで払ったときはこれを選びます。<strong>大半の立替はこれに該当します。</strong></li>
+            <li><strong>現金：</strong> 会計アプリ上で「仕事専用の財布（現金）」を管理している場合のみ使います。</li>
+        </ul>
     </div>
 
-    <h2>🙋‍♂️ よくある質問</h2>
+    <div class="info-tag tag-income">例2：報酬と立替金が入金された時（翌月15日）</div>
     <div class="example-box">
-        <strong>Q. 迷ったらどうすれば？</strong><br>
-        A. 支払元は<strong>「事業主借」</strong>、勘定科目は<strong>「立替金」</strong>にしてください。
-        <br><br>
-        <strong>Q. 15日の入金額が合わない</strong><br>
-        A. 報酬と立替金が足されています。請求書を再確認しましょう。
+        <strong>（例：報酬30万円 ＋ 立替金精算6万円が入金された場合）</strong><br><br>
+        1. 報酬分：(借) 普通預金 300,000円 ／ (貸) <strong>売上高</strong> 300,000円<br>
+        2. 立替分：(借) 普通預金 60,000円 ／ (貸) <span class="highlight">立替金</span> 60,000円<br><br>
+        ※IndieWork発行の請求書の内訳通りに2行に分けて入力してください。
+    </div>
+
+    <h2>🙋‍♂️ よくある質問（Q&A）</h2>
+    <div class="example-box">
+        <strong>Q1. コンビニで自分用と仕事用の買い物をしたい。</strong><br>
+        A. <span class="red-text">絶対に一緒に買わないでください。</span>会計を分けてください。<br><br>
+        
+        <strong>Q2. 「事業主借」と「現金」どっちを使えばいい？</strong><br>
+        A. 迷ったら<strong>「事業主借」</strong>にしてください。<br><br>
+        
+        <strong>Q3. 自分のガソリン代（基準内）のレシートはどうする？</strong><br>
+        A. 報告不要ですが、自身のアプリには「車両費」で入力してください。<br><br>
+        
+        <strong>Q4. レシート原本はどう整理しておけばいい？</strong><br>
+        A. 紙には貼らず、カテゴリーごとにクリップ留めしてください。<br><br>
+        
+        <strong>Q5. 15日に入金された金額が計算と合わない！</strong><br>
+        A. 報酬と立替精算金が合算されています。請求書の内訳を確認してください。
     </div>
 
     <div class="warning-box">
         <span class="warning-title">⚠️ 徹底事項</span>
-        1. 宛名は必ず<strong>「IndieWork合同会社」</strong><br>
-        2. 自分のアプリで「車両費」を使うのは、<strong>自己負担のガソリン代のみ</strong>。
+        <ol style="padding-left: 20px;">
+            <li><strong>宛名は「IndieWork合同会社」：</strong> 領収書は必ずこの名前で。</li>
+            <li><strong>「車両費」の使い分け：</strong> 自身のアプリで「車両費」を使うのは、<strong>自己負担のガソリン代のみ</strong>。Google負担分はすべて「立替金」です。</li>
+        </ol>
     </div>
 </div>
 
