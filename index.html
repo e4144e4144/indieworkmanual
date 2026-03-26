@@ -65,7 +65,8 @@
         .danger-box { background: #ffebeb; border: 2px solid #d63031; padding: 15px; border-radius: 8px; margin: 20px 0; font-size: 0.95em; }
         .example-box { border: 2px dashed #adb5bd; padding: 15px; background: #f8f9fa; margin-bottom: 15px; border-radius: 8px; font-size: 0.95em; }
         .info-tag { background: #6c757d; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8em; margin-bottom: 10px; display: inline-block; }
-        .tag-income { background: #6f42c1; }
+        .tag-red { background: #d63031; }
+        .tag-purple { background: #6f42c1; }
         .red-text { color: #d63031; font-weight: bold; }
 
         /* ETC画像エリア */
@@ -231,7 +232,7 @@
         <div class="card-body">
             <div class="card-row"><div class="label">内容</div><div class="value" style="color:#d63031;">基準燃料費に達しない分のガソリン代</div></div>
             <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#d63031; font-weight:bold;">自己負担</div></div>
-            <div class="card-row"><div class="label">アプリ</div><div class="value" style="color:#d63031;"><strong>車両費</strong></div></div>
+            <div class="card-row"><div class="label">アプリ</div><div class="value" style="color:#d63031;"><strong>車両費 または 旅費交通費</strong></div></div>
         </div>
     </div>
 
@@ -253,11 +254,15 @@
         備考：○月分 旅費交通費 合計
     </div>
 
-    <div class="info-tag" style="background-color: #d63031;">例：基準燃料費以内のガソリン代（自己負担分）</div>
+    <div class="info-tag tag-red">例2：基準燃料費以内のガソリン代（自己負担分）</div>
     <div class="example-box" style="border-color: #d63031;">
         <strong>（例：3,500円分を給油し、自分の経費にする場合）</strong><br>
-        (借) <span class="highlight">車両費</span> 3,500円 ／ (貸) <span class="highlight">事業主借</span> 3,500円<br>
+        (借) <span class="highlight">旅費交通費</span> (または車両費) 3,500円 ／ (貸) <span class="highlight">事業主借</span> 3,500円<br>
         備考：ガソリン代（基準内・自己負担）
+        <p style="margin-top:10px; font-size: 0.9em; background: #fff; padding: 8px; border-radius: 4px;">
+            ⚠️ <strong>大事なポイント：</strong><br>
+            借方は「旅費交通費」でも「車両費」でも構いませんが、<span class="red-text">一度カテゴリーを決めたら、その後はもう動かさない（変更しない）</span>ようにしてください。
+        </p>
     </div>
 
     <div class="example-box" style="background-color: #eefbff; border: 1px solid #0056b3;">
@@ -268,12 +273,12 @@
         </ul>
     </div>
 
-    <div class="info-tag tag-income">例2：報酬と立替金が入金された時（翌月15日）</div>
+    <div class="info-tag tag-purple">例3：報酬と立替金が入金された時（翌月15日）</div>
     <div class="example-box">
         <strong>（例：報酬30万円 ＋ 立替金精算6万円が入金された場合）</strong><br><br>
         1. 報酬分：(借) 普通預金 300,000円 ／ (貸) <strong>売上高</strong> 300,000円<br>
         2. 立替分：(借) 普通預金 60,000円 ／ (貸) <span class="highlight">立替金</span> 60,000円<br><br>
-        ※請求書の内訳通りに2行に分けて入力してください。
+        ※IndieWork発行の請求書の内訳通りに2行に分けて入力してください。
     </div>
 
     <h2>🙋‍♂️ よくある質問（Q&A）</h2>
@@ -285,7 +290,7 @@
         A. 一旦未確定で報告していいですが、<strong>確定次第必ず差し替えて</strong>提出してください。<br><br>
         
         <strong>Q3. 自分のガソリン代（基準内）のレシートはどうする？</strong><br>
-        A. 報告不要ですが、確定申告で経費になるため自身のアプリに「車両費」で入力してください。
+        A. 報告不要ですが、確定申告で経費になるため自身のアプリに入力してください。例2の通り科目は固定しましょう。
     </div>
 
     <div class="warning-box">
