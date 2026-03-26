@@ -141,18 +141,18 @@
     <div class="warning-box">
         <span class="warning-title">【重要】精算方法の変更について</span>
         レシート1枚ずつの報告は廃止です。<strong>「1ヶ月分をカテゴリーごとにまとめて合計金額で報告」</strong>してください。<br>
-        <small>※月初から随時、<strong>内容が確定したものから報告</strong>していただけると月末の修正処理がスムーズになります。ご協力をお願いします。</small>
+        <small>※月末は修正処理が立て込むため、<strong>確定したものから随時</strong>報告をお願いします。</small>
     </div>
 
     <h2>📅 1ヶ月の精算スケジュール</h2>
     <div class="flow-chart">
         <div class="flow-step">
             <div class="step-date">月初〜24日</div>
-            <div class="step-content"><b>保管と随時報告：</b>レシートを保管し、<strong>確定したものから順次Googleフォームで報告</strong>してください。</div>
+            <div class="step-content"><b>保管と随時報告：</b>レシートを保管。<strong>内容が確定したものから順次報告してください。</strong></div>
         </div>
         <div class="flow-step">
             <div class="step-date" style="background-color: #d63031;">25日〜末日</div>
-            <div class="step-content"><b>最終報告締切：</b>残りの分をすべて報告。月末は処理が非常に立て込むため、早期完了にご協力ください。</div>
+            <div class="step-content"><b>報告締切：</b>残りをすべて報告。<b>必ずこの期間内に完了してください。</b></div>
         </div>
         <div class="flow-step">
             <div class="step-date">翌月15日</div>
@@ -164,7 +164,7 @@
 
     <h2>🛣️ ETC利用証明書の提出ルール（最重要）</h2>
     <div class="danger-box" style="border-color: #0056b3; background-color: #f0f8ff;">
-        <span class="warning-title" style="color: #0056b3;">インボイス番号（T番号）入りの提出が必須です</span>
+        <span class="warning-title" style="color: #0056b3;">インボイス番号（T番号）入りが必須です</span>
         ETC利用に関しては、必ず<strong>インボイス登録番号（Tから始まる番号）</strong>が記載された「確定後」の証明書を提出してください。
         
         <div class="etc-image-container">
@@ -174,27 +174,17 @@
 
         <p><strong>【確定まで時間がかかる場合】</strong></p>
         <ul>
-            <li>利用直後で「未確定」の場合は、一旦インボイス番号がない証明書を出しても構いません。</li>
-            <li>ただし、<strong>確定次第（T番号が表示され次第）、必ず最新の証明書を差し替えて提出</strong>してください。これは精算における最低必要条件です。</li>
+            <li>利用直後で「未確定」の場合は、一旦インボイス番号なしの証明書を出しても構いません。</li>
+            <li>ただし、<strong>確定次第、必ず最新の証明書を差し替えて提出</strong>してください。これは最低必要条件です。</li>
         </ul>
     </div>
 
-    <div class="danger-box">
-        <span class="warning-title">🚨 【絶対遵守】カテゴリーが違うものは「一緒に買わない」</span>
-        <strong>区分け（カテゴリー）が違うものは、レジでの会計を分けてください。</strong>
-    </div>
-
-    <div class="danger-box" style="border-color: #d63031;">
-        <span class="warning-title">🚨 個人的なガソリン代（基準内）のレシートは宝物です</span>
-        確定申告で自身の経費として申請できるため、税金が安くなります。<strong>絶対に捨てずに自身のアプリに入力してください。</strong>
-    </div>
-
-    <h2>📂 1. カテゴリー別 負担区分</h2>
+    <h2>📂 1. カテゴリー別 負担区分（フォーム項目順）</h2>
 
     <div class="data-card">
         <div class="card-title">旅費交通費 (インボイスあり)</div>
         <div class="card-body">
-            <div class="card-row"><div class="label">内容</div><div class="value">T番号あり：駐車場、<strong>ETC（確定後）</strong>、宿泊、ガソリン(基準超)等</div></div>
+            <div class="card-row"><div class="label">内容</div><div class="value">T番号あり：駐車場、<strong>ETC（確定後）</strong>、宿泊、新幹線、ガソリン(基準超)等</div></div>
             <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#2d8e47; font-weight:bold;">IndieWork負担</div></div>
             <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
         </div>
@@ -203,7 +193,25 @@
     <div class="data-card">
         <div class="card-title">旅費交通費 (インボイスなし)</div>
         <div class="card-body">
-            <div class="card-row"><div class="label">内容</div><div class="value">T番号なし：個人駐車場、公共交通機関、フェリー等</div></div>
+            <div class="card-row"><div class="label">内容</div><div class="value">T番号なし：個人駐車場、公共交通機関、フェリー(通常)等</div></div>
+            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#2d8e47; font-weight:bold;">IndieWork負担</div></div>
+            <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
+        </div>
+    </div>
+
+    <div class="data-card">
+        <div class="card-title">食事手当（10%）</div>
+        <div class="card-body">
+            <div class="card-row"><div class="label">内容</div><div class="value">外食、コンビニ等の食事代（標準税率10%）</div></div>
+            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#2d8e47; font-weight:bold;">IndieWork負担</div></div>
+            <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
+        </div>
+    </div>
+
+    <div class="data-card">
+        <div class="card-title">食事手当（8%）</div>
+        <div class="card-body">
+            <div class="card-row"><div class="label">内容</div><div class="value">テイクアウト、飲料等の食事代（軽減税率8%）</div></div>
             <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#2d8e47; font-weight:bold;">IndieWork負担</div></div>
             <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
         </div>
@@ -215,6 +223,15 @@
             <div class="card-row"><div class="label">内容</div><div class="value">メンテナンス、修理、車両輸送費（Google依頼分）</div></div>
             <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#0056b3; font-weight:bold;">Google負担</div></div>
             <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
+        </div>
+    </div>
+
+    <div class="data-card" style="background-color: #fff5f5;">
+        <div class="card-title" style="color:#d63031;">（報告不要）</div>
+        <div class="card-body">
+            <div class="card-row"><div class="label">内容</div><div class="value" style="color:#d63031;">基準燃料費に達しない分のガソリン代</div></div>
+            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#d63031; font-weight:bold;">自己負担</div></div>
+            <div class="card-row"><div class="label">アプリ</div><div class="value" style="color:#d63031;"><strong>車両費</strong></div></div>
         </div>
     </div>
 
@@ -239,8 +256,8 @@
     <div class="example-box" style="background-color: #eefbff; border: 1px solid #0056b3;">
         <strong>💡 「事業主借」と「現金」の正しい使い分け</strong>
         <ul style="padding-left: 18px;">
-            <li><strong>事業主借：</strong> 個人の財布や個人のカードで払ったとき。<strong>大半はこれです。</strong></li>
-            <li><strong>現金：</strong> 会計アプリ上で「仕事専用の財布」を管理している場合のみ。</li>
+            <li><strong>事業主借：</strong> 個人の財布や個人のカードで払ったときはこれを選びます。<strong>大半の立替はこれです。</strong></li>
+            <li><strong>現金：</strong> 会計アプリ上で「仕事専用の財布（現金）」を管理している場合のみ使います。</li>
         </ul>
     </div>
 
@@ -249,29 +266,21 @@
         <strong>（例：報酬30万円 ＋ 立替金精算6万円が入金された場合）</strong><br><br>
         1. 報酬分：(借) 普通預金 300,000円 ／ (貸) <strong>売上高</strong> 300,000円<br>
         2. 立替分：(借) 普通預金 60,000円 ／ (貸) <span class="highlight">立替金</span> 60,000円<br><br>
-        ※請求書の内訳通りに2行に分けて入力してください。
+        ※IndieWork発行の請求書の内訳通りに2行に分けて入力してください。
     </div>
 
     <h2>🙋‍♂️ よくある質問（Q&A）</h2>
     <div class="example-box">
-        <strong>Q1. ETCが未確定のまま締切が来そうです。</strong><br>
-        A. 一旦「未確定」で報告してください。ただし、確定後に<strong>必ずT番号入りのものに差し替えて</strong>再送してください。これが最低限のルールです。<br><br>
+        <strong>Q1. コンビニで自分用と仕事用の買い物をしたい。</strong><br>
+        A. <span class="red-text">絶対に一緒に買わないでください。</span>会計を分けてください。<br><br>
         
-        <strong>Q2. 月末まで待ってからまとめて報告すべき？</strong><br>
-        A. いいえ。月末は修正処理が非常に立て込むため、<strong>確定したものから随時</strong>出していただけると非常に助かります。<br><br>
+        <strong>Q2. ETCが未確定のまま締切が来そうです。</strong><br>
+        A. 一旦未確定で報告していいですが、<strong>確定次第必ず差し替えて</strong>提出してください。<br><br>
         
-        <strong>Q3. コンビニで自分用と仕事用の買い物をしたい。</strong><br>
-        A. <span class="red-text">絶対に一緒に買わないでください。</span>会計を分けてください。
+        <strong>Q3. 自分のガソリン代（基準内）のレシートはどうする？</strong><br>
+        A. 報告不要ですが、確定申告で有利になるため捨てずに自身のアプリに「車両費」で入力してください。
     </div>
 
     <div class="warning-box">
         <span class="warning-title">⚠️ 徹底事項</span>
-        <ol style="padding-left: 20px;">
-            <li><strong>宛名は「IndieWork合同会社」：</strong> 領収書はこの名前で。</li>
-            <li><strong>「確定」したものから順次提出：</strong> 月末に溜め込まないようご協力ください。</li>
-        </ol>
-    </div>
-</div>
-
-</body>
-</html>
+        <ol
