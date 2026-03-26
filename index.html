@@ -65,7 +65,9 @@
         .danger-box { background: #ffebeb; border: 2px solid #d63031; padding: 15px; border-radius: 8px; margin: 20px 0; font-size: 0.95em; }
         .example-box { border: 2px dashed #adb5bd; padding: 15px; background: #f8f9fa; margin-bottom: 15px; border-radius: 8px; font-size: 0.95em; }
         .info-tag { background: #6c757d; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8em; margin-bottom: 10px; display: inline-block; }
-        
+        .tag-income { background: #6f42c1; }
+        .red-text { color: #d63031; font-weight: bold; }
+
         /* ETC画像エリア */
         .etc-image-container {
             text-align: center;
@@ -73,6 +75,7 @@
             border: 1px solid #ddd;
             padding: 10px;
             border-radius: 8px;
+            background: #fff;
         }
         .etc-image-container img {
             max-width: 100%;
@@ -128,7 +131,6 @@
         .card-row { margin-bottom: 5px; display: flex; }
         .label { font-weight: bold; min-width: 80px; color: #666; }
         .value { flex: 1; }
-        .red-text { color: #d63031; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -150,7 +152,7 @@
         </div>
         <div class="flow-step">
             <div class="step-date" style="background-color: #d63031;">25日〜末日</div>
-            <div class="step-content"><b>最終報告締切：</b>残りの分をすべて報告。月末は処理が立て込むため、早期完了にご協力ください。</div>
+            <div class="step-content"><b>最終報告締切：</b>残りの分をすべて報告。月末は処理が非常に立て込むため、早期完了にご協力ください。</div>
         </div>
         <div class="flow-step">
             <div class="step-date">翌月15日</div>
@@ -166,8 +168,8 @@
         ETC利用に関しては、必ず<strong>インボイス登録番号（Tから始まる番号）</strong>が記載された「確定後」の証明書を提出してください。
         
         <div class="etc-image-container">
-            <img src="etc_sample.png" alt="ETC利用証明書の比較">
-            <p style="font-size: 0.8em; color: #666;">※右側の【確定後】（T番号あり）を最終的に提出してください</p>
+            <img src="Screenshot 2026-03-26 at 9.55.27.png" alt="ETC利用証明書の比較">
+            <p style="font-size: 0.8em; color: #666;">※右側の【確定後】（T番号あり）を提出してください</p>
         </div>
 
         <p><strong>【確定まで時間がかかる場合】</strong></p>
@@ -179,7 +181,12 @@
 
     <div class="danger-box">
         <span class="warning-title">🚨 【絶対遵守】カテゴリーが違うものは「一緒に買わない」</span>
-        <strong>区分け（カテゴリー）が違うものは、レジでの会計を分けてください。</strong>1枚のレシートに複数の内容が混ざると集計不能になります。
+        <strong>区分け（カテゴリー）が違うものは、レジでの会計を分けてください。</strong>
+    </div>
+
+    <div class="danger-box" style="border-color: #d63031;">
+        <span class="warning-title">🚨 個人的なガソリン代（基準内）のレシートは宝物です</span>
+        確定申告で自身の経費として申請できるため、税金が安くなります。<strong>絶対に捨てずに自身のアプリに入力してください。</strong>
     </div>
 
     <h2>📂 1. カテゴリー別 負担区分</h2>
@@ -194,6 +201,15 @@
     </div>
 
     <div class="data-card">
+        <div class="card-title">旅費交通費 (インボイスなし)</div>
+        <div class="card-body">
+            <div class="card-row"><div class="label">内容</div><div class="value">T番号なし：個人駐車場、公共交通機関、フェリー等</div></div>
+            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#2d8e47; font-weight:bold;">IndieWork負担</div></div>
+            <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
+        </div>
+    </div>
+
+    <div class="data-card">
         <div class="card-title">車両費</div>
         <div class="card-body">
             <div class="card-row"><div class="label">内容</div><div class="value">メンテナンス、修理、車両輸送費（Google依頼分）</div></div>
@@ -202,23 +218,57 @@
         </div>
     </div>
 
+    <h2>📦 2. 原本回収ルール（3ヶ月に一度）</h2>
+    <div class="example-box">
+        IndieWorkへ報告した原本は定期的に回収します：
+        <ul>
+            <li><span class="red-text">台紙や紙には絶対に貼らないでください。</span></li>
+            <li>カテゴリーごとに分け、<strong>「日付順」</strong>に並べる。</li>
+            <li>カテゴリーごとに<strong>クリップで留めて</strong>まとめる。</li>
+        </ul>
+    </div>
+
+    <h2>✍️ 3. 会計アプリでの具体的な仕訳例</h2>
+
+    <div class="info-tag">例1：個人の財布やカードで立て替えた場合（基本）</div>
+    <div class="example-box">
+        (借) <span class="highlight">立替金</span> 10,000円 ／ (貸) <span class="highlight">事業主借</span> 10,000円<br>
+        備考：○月分 旅費交通費 合計
+    </div>
+
+    <div class="example-box" style="background-color: #eefbff; border: 1px solid #0056b3;">
+        <strong>💡 「事業主借」と「現金」の正しい使い分け</strong>
+        <ul style="padding-left: 18px;">
+            <li><strong>事業主借：</strong> 個人の財布や個人のカードで払ったとき。<strong>大半はこれです。</strong></li>
+            <li><strong>現金：</strong> 会計アプリ上で「仕事専用の財布」を管理している場合のみ。</li>
+        </ul>
+    </div>
+
+    <div class="info-tag tag-income">例2：報酬と立替金が入金された時（翌月15日）</div>
+    <div class="example-box">
+        <strong>（例：報酬30万円 ＋ 立替金精算6万円が入金された場合）</strong><br><br>
+        1. 報酬分：(借) 普通預金 300,000円 ／ (貸) <strong>売上高</strong> 300,000円<br>
+        2. 立替分：(借) 普通預金 60,000円 ／ (貸) <span class="highlight">立替金</span> 60,000円<br><br>
+        ※請求書の内訳通りに2行に分けて入力してください。
+    </div>
+
     <h2>🙋‍♂️ よくある質問（Q&A）</h2>
     <div class="example-box">
         <strong>Q1. ETCが未確定のまま締切が来そうです。</strong><br>
-        A. 一旦「未確定」の証明書で報告してください。ただし、後日確定した時点で<strong>必ずT番号入りのものに差し替えて</strong>再提出をお願いします。<br><br>
+        A. 一旦「未確定」で報告してください。ただし、確定後に<strong>必ずT番号入りのものに差し替えて</strong>再送してください。これが最低限のルールです。<br><br>
         
-        <strong>Q2. なぜ確定したものから随時出す必要があるのですか？</strong><br>
-        A. 月末は全スタッフの修正処理が集中するため、エラーや確認事項が多いと入金が遅れるリスクがあります。確定分から早めに提出いただくことで正確な処理が可能になります。<br><br>
+        <strong>Q2. 月末まで待ってからまとめて報告すべき？</strong><br>
+        A. いいえ。月末は修正処理が非常に立て込むため、<strong>確定したものから随時</strong>出していただけると非常に助かります。<br><br>
         
-        <strong>Q3. インボイス番号（T番号）がないとどうなりますか？</strong><br>
-        A. 税法上の精算が認められないため、再提出をお願いすることになります。二度手間を防ぐためにも確定後の取得を徹底してください。
+        <strong>Q3. コンビニで自分用と仕事用の買い物をしたい。</strong><br>
+        A. <span class="red-text">絶対に一緒に買わないでください。</span>会計を分けてください。
     </div>
 
     <div class="warning-box">
         <span class="warning-title">⚠️ 徹底事項</span>
         <ol style="padding-left: 20px;">
-            <li><strong>宛名は「IndieWork合同会社」：</strong> 領収書はこの名前で取得。</li>
-            <li><strong>「確定」したものから順次提出：</strong> 月末に溜め込まず、随時の報告にご協力ください。</li>
+            <li><strong>宛名は「IndieWork合同会社」：</strong> 領収書はこの名前で。</li>
+            <li><strong>「確定」したものから順次提出：</strong> 月末に溜め込まないようご協力ください。</li>
         </ol>
     </div>
 </div>
