@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>立替金精算・会計アプリ入力マニュアル</title>
     <style>
-        /* ベース設定：スマホでも文字が小さくなりすぎないよう調整 */
+        /* ベース設定 */
         body { 
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; 
             line-height: 1.6; 
@@ -41,7 +41,7 @@
             font-size: 1.1em;
         }
 
-        /* リンクボタン：指で押しやすいサイズに */
+        /* リンクボタン */
         .btn-link { 
             display: block; 
             width: 100%; 
@@ -65,10 +65,22 @@
         .danger-box { background: #ffebeb; border: 2px solid #d63031; padding: 15px; border-radius: 8px; margin: 20px 0; font-size: 0.95em; }
         .example-box { border: 2px dashed #adb5bd; padding: 15px; background: #f8f9fa; margin-bottom: 15px; border-radius: 8px; font-size: 0.95em; }
         .info-tag { background: #6c757d; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8em; margin-bottom: 10px; display: inline-block; }
-        .tag-income { background: #6f42c1; }
-        .red-text { color: #d63031; font-weight: bold; }
+        
+        /* ETC画像エリア */
+        .etc-image-container {
+            text-align: center;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .etc-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
 
-        /* スケジュール（縦並びのフローに変更） */
+        /* スケジュール */
         .flow-chart { margin: 20px 0; }
         .flow-step { 
             background: #fff; 
@@ -98,7 +110,7 @@
             font-size: 0.9em;
         }
 
-        /* スマホ用テーブル代替（カード形式） */
+        /* データカード */
         .data-card {
             border: 1px solid #dee2e6;
             border-radius: 8px;
@@ -116,6 +128,7 @@
         .card-row { margin-bottom: 5px; display: flex; }
         .label { font-weight: bold; min-width: 80px; color: #666; }
         .value { flex: 1; }
+        .red-text { color: #d63031; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -126,22 +139,18 @@
     <div class="warning-box">
         <span class="warning-title">【重要】精算方法の変更について</span>
         レシート1枚ずつの報告は廃止です。<strong>「1ヶ月分をカテゴリーごとにまとめて合計金額で報告」</strong>してください。<br>
-        <small>※後述の「立替車両費」に該当するもの以外は、原則この一括報告ルールを適用します。</small>
+        <small>※月初から随時、<strong>内容が確定したものから報告</strong>していただけると月末の修正処理がスムーズになります。ご協力をお願いします。</small>
     </div>
 
     <h2>📅 1ヶ月の精算スケジュール</h2>
     <div class="flow-chart">
         <div class="flow-step">
             <div class="step-date">月初〜24日</div>
-            <div class="step-content"><b>レシートの保管：</b>カテゴリーごとに分けて保管。</div>
+            <div class="step-content"><b>保管と随時報告：</b>レシートを保管し、<strong>確定したものから順次Googleフォームで報告</strong>してください。</div>
         </div>
         <div class="flow-step">
             <div class="step-date" style="background-color: #d63031;">25日〜末日</div>
-            <div class="step-content"><b>集計と報告：</b>Googleフォームから報告。<b>必ずこの期間内に完了してください。</b></div>
-        </div>
-        <div class="flow-step">
-            <div class="step-date">翌月上旬</div>
-            <div class="step-content"><b>請求書発行：</b>IndieWorkが請求書を発行。内容を確認してください。</div>
+            <div class="step-content"><b>最終報告締切：</b>残りの分をすべて報告。月末は処理が立て込むため、早期完了にご協力ください。</div>
         </div>
         <div class="flow-step">
             <div class="step-date">翌月15日</div>
@@ -151,16 +160,26 @@
 
     <a href="https://forms.gle/eYyCgMtLQb4MG3Rb9" class="btn-link" target="_blank">📲 報告用 Google フォームはこちら</a>
 
-    <div class="danger-box">
-        <span class="warning-title">🚨 【絶対遵守】カテゴリーが違うものは「一緒に買わない」</span>
-        <strong>区分け（カテゴリー）が違うものは、レシートを分けてください。</strong><br>
-        1枚のレシートに複数の内容が混ざると集計ミスになります。レジでは必ず<strong>「会計を分けて」</strong>レシートを別々に受け取ってください。
+    <h2>🛣️ ETC利用証明書の提出ルール（最重要）</h2>
+    <div class="danger-box" style="border-color: #0056b3; background-color: #f0f8ff;">
+        <span class="warning-title" style="color: #0056b3;">インボイス番号（T番号）入りの提出が必須です</span>
+        ETC利用に関しては、必ず<strong>インボイス登録番号（Tから始まる番号）</strong>が記載された「確定後」の証明書を提出してください。
+        
+        <div class="etc-image-container">
+            <img src="etc_sample.png" alt="ETC利用証明書の比較">
+            <p style="font-size: 0.8em; color: #666;">※右側の【確定後】（T番号あり）を最終的に提出してください</p>
+        </div>
+
+        <p><strong>【確定まで時間がかかる場合】</strong></p>
+        <ul>
+            <li>利用直後で「未確定」の場合は、一旦インボイス番号がない証明書を出しても構いません。</li>
+            <li>ただし、<strong>確定次第（T番号が表示され次第）、必ず最新の証明書を差し替えて提出</strong>してください。これは精算における最低必要条件です。</li>
+        </ul>
     </div>
 
-    <div class="danger-box" style="border-color: #d63031;">
-        <span class="warning-title">🚨 個人的なガソリン代（基準内）のレシートは宝物です</span>
-        基準燃料費に達しないガソリン代は報告不要ですが、<strong>確定申告で自身の経費として申請できるため、税金が安くなります。</strong><br>
-        <strong>絶対にレシートを捨てずに大切に保管し、自身のアプリに入力してください。</strong>
+    <div class="danger-box">
+        <span class="warning-title">🚨 【絶対遵守】カテゴリーが違うものは「一緒に買わない」</span>
+        <strong>区分け（カテゴリー）が違うものは、レジでの会計を分けてください。</strong>1枚のレシートに複数の内容が混ざると集計不能になります。
     </div>
 
     <h2>📂 1. カテゴリー別 負担区分</h2>
@@ -168,25 +187,7 @@
     <div class="data-card">
         <div class="card-title">旅費交通費 (インボイスあり)</div>
         <div class="card-body">
-            <div class="card-row"><div class="label">内容</div><div class="value">T番号あり：駐車場、高速、宿泊、新幹線、ガソリン(基準超)等</div></div>
-            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#2d8e47; font-weight:bold;">IndieWork負担</div></div>
-            <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
-        </div>
-    </div>
-
-    <div class="data-card">
-        <div class="card-title">旅費交通費 (インボイスなし)</div>
-        <div class="card-body">
-            <div class="card-row"><div class="label">内容</div><div class="value">T番号なし：個人駐車場、公共交通機関、フェリー(通常)等</div></div>
-            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#2d8e47; font-weight:bold;">IndieWork負担</div></div>
-            <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
-        </div>
-    </div>
-
-    <div class="data-card">
-        <div class="card-title">食事手当（10% / 8%）</div>
-        <div class="card-body">
-            <div class="card-row"><div class="label">内容</div><div class="value">食事代（※混ざった場合は全て10%の方に入れて集計）</div></div>
+            <div class="card-row"><div class="label">内容</div><div class="value">T番号あり：駐車場、<strong>ETC（確定後）</strong>、宿泊、ガソリン(基準超)等</div></div>
             <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#2d8e47; font-weight:bold;">IndieWork負担</div></div>
             <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong></div></div>
         </div>
@@ -201,72 +202,23 @@
         </div>
     </div>
 
-    <div class="data-card" style="background-color: #fff5f5;">
-        <div class="card-title" style="color:#d63031;">（報告不要）</div>
-        <div class="card-body">
-            <div class="card-row"><div class="label">内容</div><div class="value" style="color:#d63031;">基準燃料費に達しない分のガソリン代</div></div>
-            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#d63031; font-weight:bold;">自己負担</div></div>
-            <div class="card-row"><div class="label">アプリ</div><div class="value" style="color:#d63031;"><strong>車両費</strong></div></div>
-        </div>
-    </div>
-
-    <h2>📦 2. 原本回収ルール（3ヶ月に一度）</h2>
-    <div class="example-box">
-        IndieWorkへ報告した原本は定期的に回収します：
-        <ul>
-            <li><span class="red-text">台紙や紙には絶対に貼らないでください。</span></li>
-            <li>カテゴリーごとに分け、<strong>「日付順」</strong>に並べる。</li>
-            <li>カテゴリーごとに<strong>クリップで留めて</strong>まとめる。</li>
-        </ul>
-    </div>
-
-    <h2>✍️ 3. 会計アプリでの具体的な仕訳例</h2>
-
-    <div class="info-tag">例1：個人の財布やカードで立て替えた場合（基本）</div>
-    <div class="example-box">
-        (借) <span class="highlight">立替金</span> 10,000円 ／ (貸) <span class="highlight">事業主借</span> 10,000円<br>
-        備考：○月分 旅費交通費 合計
-    </div>
-
-    <div class="example-box" style="background-color: #eefbff; border: 1px solid #0056b3;">
-        <strong>💡 「事業主借」と「現金」の正しい使い分け</strong>
-        <ul style="padding-left: 18px;">
-            <li><strong>事業主借：</strong> 個人の財布（プライベートなお金）や個人のカードで払ったときはこれを選びます。<strong>大半の立替はこれに該当します。</strong></li>
-            <li><strong>現金：</strong> 会計アプリ上で「仕事専用の財布（現金）」を管理している場合のみ使います。</li>
-        </ul>
-    </div>
-
-    <div class="info-tag tag-income">例2：報酬と立替金が入金された時（翌月15日）</div>
-    <div class="example-box">
-        <strong>（例：報酬30万円 ＋ 立替金精算6万円が入金された場合）</strong><br><br>
-        1. 報酬分：(借) 普通預金 300,000円 ／ (貸) <strong>売上高</strong> 300,000円<br>
-        2. 立替分：(借) 普通預金 60,000円 ／ (貸) <span class="highlight">立替金</span> 60,000円<br><br>
-        ※IndieWork発行の請求書の内訳通りに2行に分けて入力してください。
-    </div>
-
     <h2>🙋‍♂️ よくある質問（Q&A）</h2>
     <div class="example-box">
-        <strong>Q1. コンビニで自分用と仕事用の買い物をしたい。</strong><br>
-        A. <span class="red-text">絶対に一緒に買わないでください。</span>会計を分けてください。<br><br>
+        <strong>Q1. ETCが未確定のまま締切が来そうです。</strong><br>
+        A. 一旦「未確定」の証明書で報告してください。ただし、後日確定した時点で<strong>必ずT番号入りのものに差し替えて</strong>再提出をお願いします。<br><br>
         
-        <strong>Q2. 「事業主借」と「現金」どっちを使えばいい？</strong><br>
-        A. 迷ったら<strong>「事業主借」</strong>にしてください。<br><br>
+        <strong>Q2. なぜ確定したものから随時出す必要があるのですか？</strong><br>
+        A. 月末は全スタッフの修正処理が集中するため、エラーや確認事項が多いと入金が遅れるリスクがあります。確定分から早めに提出いただくことで正確な処理が可能になります。<br><br>
         
-        <strong>Q3. 自分のガソリン代（基準内）のレシートはどうする？</strong><br>
-        A. 報告不要ですが、自身のアプリには「車両費」で入力してください。<br><br>
-        
-        <strong>Q4. レシート原本はどう整理しておけばいい？</strong><br>
-        A. 紙には貼らず、カテゴリーごとにクリップ留めしてください。<br><br>
-        
-        <strong>Q5. 15日に入金された金額が計算と合わない！</strong><br>
-        A. 報酬と立替精算金が合算されています。請求書の内訳を確認してください。
+        <strong>Q3. インボイス番号（T番号）がないとどうなりますか？</strong><br>
+        A. 税法上の精算が認められないため、再提出をお願いすることになります。二度手間を防ぐためにも確定後の取得を徹底してください。
     </div>
 
     <div class="warning-box">
         <span class="warning-title">⚠️ 徹底事項</span>
         <ol style="padding-left: 20px;">
-            <li><strong>宛名は「IndieWork合同会社」：</strong> 領収書は必ずこの名前で。</li>
-            <li><strong>「車両費」の使い分け：</strong> 自身のアプリで「車両費」を使うのは、<strong>自己負担のガソリン代のみ</strong>。Google負担分はすべて「立替金」です。</li>
+            <li><strong>宛名は「IndieWork合同会社」：</strong> 領収書はこの名前で取得。</li>
+            <li><strong>「確定」したものから順次提出：</strong> 月末に溜め込まず、随時の報告にご協力ください。</li>
         </ol>
     </div>
 </div>
