@@ -59,7 +59,7 @@
         }
 
         /* ボックス類 */
-        .highlight { background-color: #fff3cd; padding: 2px 4px; font-weight: bold; border-radius: 4px; color: #d63031; }
+        .highlight { background-color: #fff3cd; padding: 2px 4px; font-weight: bold; border-radius: 4px; color: #d9534f; }
         .warning-box { background: #fff5f5; border: 2px solid #ffc9c9; padding: 15px; border-radius: 8px; margin: 20px 0; }
         .warning-title { color: #d63031; font-weight: bold; font-size: 1.1em; margin-bottom: 8px; display: block; }
         .danger-box { background: #ffebeb; border: 2px solid #d63031; padding: 15px; border-radius: 8px; margin: 20px 0; font-size: 0.95em; }
@@ -69,6 +69,21 @@
         .tag-purple { background: #6f42c1; }
         .tag-blue { background: #0056b3; }
         .red-text { color: #d63031; font-weight: bold; }
+
+        /* ETC画像エリア */
+        .etc-image-container {
+            text-align: center;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            background: #fff;
+        }
+        .etc-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
 
         /* スケジュール */
         .flow-chart { margin: 20px 0; }
@@ -118,16 +133,6 @@
         .card-row { margin-bottom: 5px; display: flex; }
         .label { font-weight: bold; min-width: 80px; color: #666; }
         .value { flex: 1; }
-        
-        .calculation {
-            background: #eefbff;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: bold;
-            color: #0056b3;
-            margin-bottom: 10px;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -144,86 +149,79 @@
     <h2>📅 1ヶ月の精算スケジュール</h2>
     <div class="flow-chart">
         <div class="flow-step">
-            <div class="step-date">月初〜末日</div>
-            <div class="step-content"><b>都度入力：</b>立替経費が発生したら、その都度アプリに「立替金」として入力します。</div>
+            <div class="step-date">月初〜24日</div>
+            <div class="step-content"><b>保管と随時報告：</b>レシートを保管。確定したものから順次報告してください。</div>
         </div>
         <div class="flow-step">
-            <div class="step-date" style="background-color: #d63031;">3月末（請求時）</div>
-            <div class="step-content"><b>振替伝票入力：</b>報酬・リース料・立替金をまとめ、1つの「売掛金」にパッキングします。</div>
+            <div class="step-date" style="background-color: #d63031;">25日〜末日</div>
+            <div class="step-content"><b>報告締切：</b>残りをすべて報告。<b>必ずこの期間内に完了してください。</b></div>
         </div>
         <div class="flow-step">
             <div class="step-date">翌月15日</div>
-            <div class="step-content"><b>入金消込：</b>銀行への入金額を「売掛金」として処理し、完了です。</div>
+            <div class="step-content"><b>入金確認：</b>報酬と立替金が合算で入金されます。</div>
         </div>
     </div>
 
     <a href="https://forms.gle/eYyCgMtLQb4MG3Rb9" class="btn-link" target="_blank">📲 報告用 Google フォームはこちら</a>
 
-    <h2>📂 1. カテゴリー別 負担区分</h2>
-    <div class="data-card">
-        <div class="card-title">旅費交通費 / 食事手当 / 車両費</div>
-        <div class="card-body">
-            <div class="card-row"><div class="label">負担元</div><div class="value" style="color:#2d8e47; font-weight:bold;">IndieWork負担</div></div>
-            <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>立替金</strong>（都度、事業主借で入力）</div></div>
+    <h2>🛣️ ETC利用証明書の提出ルール（最重要）</h2>
+    <div class="danger-box" style="border-color: #0056b3; background-color: #f0f8ff;">
+        <span class="warning-title" style="color: #0056b3;">インボイス番号（T番号）入りが必須です</span>
+        ETC利用に関しては、必ずインボイス登録番号（T番号）が記載された「確定後」の証明書を提出してください。
+        
+        <div class="etc-image-container">
+            <img src="Screenshot 2026-03-26 at 9.55.27.png" alt="ETC利用証明書の比較">
+            <p style="font-size: 0.8em; color: #666;">※右側の【確定後】（T番号あり）を提出してください</p>
         </div>
     </div>
 
-    <div class="data-card" style="background-color: #fff5f5;">
-        <div class="card-title" style="color:#d63031;">車両リース料（差し引き分）</div>
-        <div class="card-body">
-            <div class="card-row"><div class="label">内容</div><div class="value">月額20,000円。報酬から天引きされる。</div></div>
-            <div class="card-row"><div class="label">アプリ</div><div class="value"><strong>地代家賃（または賃借料）</strong>として末日に計上</div></div>
-        </div>
-    </div>
+    <h2>📂 1. カテゴリー別 負担区分（フォーム項目順）</h2>
+    <div class="data-card"><div class="card-title">旅費交通費 / 食事手当 / 車両費</div><div class="card-body">負担元：IndieWork負担 / アプリ入力：<strong>立替金</strong></div></div>
 
-    <h2>✍️ 2. 会計アプリでの具体的な仕訳フロー</h2>
+    <h2>✍️ 3. 会計アプリでの具体的な仕訳例（ケーススタディ）</h2>
 
     <div class="info-tag">STEP 1：発生のつど（3月中の各日）</div>
     <div class="example-box">
         <strong>【立替経費が発生したとき】</strong><br>
-        (借) <span class="highlight">立替金</span> 5,000円<br> 
-        (貸) 事業主借 5,000円<br>
-        <small>※これを繰り返して、月末に合計が例えば55,000円になっている状態にします。</small>
+        (借) <span class="highlight">立替金</span> 5,000円 / (貸) 事業主借 5,000円<br>
+        <small>※3月中に合計で55,000円分を都度入力している状態とします。</small>
     </div>
 
-    <div class="info-tag tag-red">STEP 2：3月31日（請求確定時）※最重要</div>
+    <div class="info-tag tag-red">STEP 2：3月31日（請求時）※一本化の作業</div>
     <div class="example-box" style="border-color: #d63031;">
-        <strong>【振替伝票で全てを1つにまとめる】</strong><br>
-        <div class="calculation">
-            売掛金 335,000円 ＝ <br>(報酬 30万 + 立替 5.5万) - リース 2万
-        </div>
+        <strong>【ケース：報酬30万、車両リース2万、立替合計5.5万の場合】</strong><br>
+        振替伝票入力で、これらを1つの「売掛金」にまとめます。<br><br>
         (借) <span class="highlight">売掛金</span> 335,000円 / (貸) <b>売上高</b> 300,000円<br>
         (借) <b>地代家賃</b> 20,000円 / (貸) <span class="highlight">立替金</span> 55,000円<br>
         
         <p style="margin-top:10px; font-size: 0.9em; background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #ffc9c9;">
-            ⚠️ <strong>ここがポイント！</strong><br>
-            右側（貸方）に「立替金」を入れることで、これまで都度入力した残高をゼロにリセットし、4月の入金予定額を「売掛金」へ移動させます。
+            💡 <strong>計算式：</strong><br>
+            (報酬 30万 + 立替 5.5万) － リース 2万 ＝ <b>入金予定額 33.5万</b><br>
+            この「入金予定額」を売掛金として登録するのがポイントです。
         </p>
     </div>
 
-    <div class="info-tag tag-blue">STEP 3：4月15日（入金があった時）</div>
+    <div class="info-tag tag-blue">STEP 3：4月15日（入金時）</div>
     <div class="example-box" style="border-color: #0056b3;">
-        <strong>【手動で入金を記録する】</strong><br>
-        (借) 普通預金 335,000円<br>
-        (貸) <span class="highlight">売掛金</span> 335,000円<br>
-        <br>
+        <strong>【実際に335,000円が振り込まれたら】</strong><br>
+        (借) 普通預金 335,000円 / (貸) <span class="highlight">売掛金</span> 335,000円<br><br>
         <div style="background: #eefbff; padding: 10px; border-radius: 4px; border: 1px solid #0056b3;">
             💡 <strong>完了！</strong><br>
-            入金時は「売上」ではなく、必ず「売掛金」で消し込みます。これで帳簿がピタリと一致します。
+            入金時は「売上」ではなく、3月末に作った「売掛金」を消し込むだけです。
         </div>
     </div>
 
-    <h2>🙋‍♂️ 運用のアドバイス</h2>
+    <h2>🙋‍♂️ よくある質問（Q&A）</h2>
     <div class="example-box">
-        <strong>Q. なぜ月末に「売掛金」にまとめるのですか？</strong><br>
-        A. 銀行に振り込まれる金額は「報酬＋立替金ーリース代」が混ざった特殊な数字だからです。あらかじめその合計額で「売掛金」を作っておけば、入金時の処理が1行で済み、ミスがなくなります。
+        <strong>Q. なぜ月末に売掛金にまとめるのですか？</strong><br>
+        A. 入金額は「報酬」や「立替金」が混ざった数字であり、そのまま売上にすると二重計上になるからです。月末に「売掛金」という箱に全てパッキングすることで、正確な利益管理ができます。
     </div>
 
     <div class="warning-box">
         <span class="warning-title">⚠️ 徹底事項</span>
         <ol style="padding-left: 20px;">
-            <li><strong>入金額＝売掛金：</strong> 3月末の売掛金額と、実際の入金額を1円単位で一致させてください。</li>
-            <li><strong>二重計上禁止：</strong> 入金時に「売上」を再度立てないよう注意してください。</li>
+            <li><strong>宛名は「IndieWork合同会社」</strong></li>
+            <li><strong>確定したものから随時出す</strong></li>
         </ol>
     </div>
 </div>
