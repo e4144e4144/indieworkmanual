@@ -70,27 +70,41 @@
         .tag-blue { background: #0056b3; }
         .red-text { color: #d63031; font-weight: bold; }
 
-        /* テーブル設定 */
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
+        /* スマホ向けカードスタイル（1のカテゴリー用） */
+        .category-card {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .category-header {
+            background-color: #e9ecef;
+            padding: 8px 12px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .category-body { padding: 12px; font-size: 0.9em; }
+        .category-body ul { margin: 0; padding-left: 20px; }
+        .category-footer { 
+            background: #f8f9fa; 
+            padding: 8px 12px; 
+            font-size: 0.85em; 
+            border-top: 1px dashed #dee2e6;
+            display: flex;
+            justify-content: space-between;
+        }
+        .burden-tag { 
+            padding: 2px 8px; 
+            border-radius: 4px; 
+            font-weight: bold; 
             font-size: 0.85em;
         }
-        .data-table th, .data-table td {
-            border: 1px solid #dee2e6;
-            padding: 10px;
-            text-align: left;
-            vertical-align: top;
-        }
-        .data-table th {
-            background-color: #e9ecef;
-            white-space: nowrap;
-        }
-        .data-table ul {
-            margin: 0;
-            padding-left: 18px;
-        }
+        .tag-indie { background: #e2e3e5; color: #383d41; }
+        .tag-google { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
 
         /* ETC画像エリア */
         .etc-image-container {
@@ -179,82 +193,105 @@
     </div>
 
     <h2>📂 1. カテゴリー別 負担区分（フォーム項目順）</h2>
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th>カテゴリー（用途）</th>
-                <th>詳細内容</th>
-                <th>負担元</th>
-                <th>アプリ入力</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>旅費交通費</td>
-                <td>
-                    <ul>
-                        <li>ガソリン代（基準燃料費超過分のみ）</li>
-                        <li>駐車場代</li>
-                        <li>高速道路代</li>
-                        <li>宿泊代</li>
-                        <li>公共交通機関</li>
-                        <li>新幹線代・飛行機代</li>
-                        <li>フェリー車両輸送代（通常輸送分）</li>
-                    </ul>
-                </td>
-                <td>IndieWork負担</td>
-                <td rowspan="6" style="text-align: center; vertical-align: middle;"><strong>立替金</strong></td>
-            </tr>
-            <tr>
-                <td>食事手当</td>
-                <td>
-                    <ul>
-                        <li>食事手当（8%）</li>
-                        <li>食事手当（10%）</li>
-                    </ul>
-                </td>
-                <td>IndieWork負担</td>
-            </tr>
-            <tr>
-                <td>車両費</td>
-                <td>
-                    <ul>
-                        <li>メンテナンス代</li>
-                        <li>修理代</li>
-                        <li>フェリー車両輸送代（Google依頼分）</li>
-                    </ul>
-                </td>
-                <td style="background-color: #fff3cd; color: #d63031; font-weight: bold;">Google負担</td>
-            </tr>
-            <tr>
-                <td>荷造運搬費</td>
-                <td>
-                    <ul>
-                        <li>レターパック、宅急便代</li>
-                    </ul>
-                </td>
-                <td>IndieWork負担</td>
-            </tr>
-            <tr>
-                <td>通信費</td>
-                <td>
-                    <ul>
-                        <li>SIMカード代</li>
-                    </ul>
-                </td>
-                <td>IndieWork負担</td>
-            </tr>
-            <tr>
-                <td>雑費</td>
-                <td>
-                    <ul>
-                        <li>その他</li>
-                    </ul>
-                </td>
-                <td>IndieWork負担</td>
-            </tr>
-        </tbody>
-    </table>
+    
+    <div class="category-card">
+        <div class="category-header">
+            <span>旅費交通費</span>
+            <span class="burden-tag tag-indie">IndieWork負担</span>
+        </div>
+        <div class="category-body">
+            <ul>
+                <li>ガソリン代（基準燃料費超過分のみ）</li>
+                <li>駐車場代</li>
+                <li>高速道路代</li>
+                <li>宿泊代</li>
+                <li>公共交通機関</li>
+                <li>新幹線代・飛行機代</li>
+                <li>フェリー車両輸送代（通常輸送分）</li>
+            </ul>
+        </div>
+        <div class="category-footer">
+            <span>アプリ入力：<strong>立替金</strong></span>
+        </div>
+    </div>
+
+    <div class="category-card">
+        <div class="category-header">
+            <span>食事手当</span>
+            <span class="burden-tag tag-indie">IndieWork負担</span>
+        </div>
+        <div class="category-body">
+            <ul>
+                <li>食事手当（8%）</li>
+                <li>食事手当（10%）</li>
+            </ul>
+        </div>
+        <div class="category-footer">
+            <span>アプリ入力：<strong>立替金</strong></span>
+        </div>
+    </div>
+
+    <div class="category-card" style="border: 1px solid #ffeeba;">
+        <div class="category-header" style="background-color: #fff3cd;">
+            <span>車両費</span>
+            <span class="burden-tag tag-google">Google負担</span>
+        </div>
+        <div class="category-body">
+            <ul>
+                <li>メンテナンス代</li>
+                <li>修理代</li>
+                <li>フェリー車両輸送代（Google依頼分）</li>
+            </ul>
+        </div>
+        <div class="category-footer">
+            <span>アプリ入力：<strong>立替金</strong></span>
+        </div>
+    </div>
+
+    <div class="category-card">
+        <div class="category-header">
+            <span>荷造運搬費</span>
+            <span class="burden-tag tag-indie">IndieWork負担</span>
+        </div>
+        <div class="category-body">
+            <ul>
+                <li>レターパック、宅急便代</li>
+            </ul>
+        </div>
+        <div class="category-footer">
+            <span>アプリ入力：<strong>立替金</strong></span>
+        </div>
+    </div>
+
+    <div class="category-card">
+        <div class="category-header">
+            <span>通信費</span>
+            <span class="burden-tag tag-indie">IndieWork負担</span>
+        </div>
+        <div class="category-body">
+            <ul>
+                <li>SIMカード代</li>
+            </ul>
+        </div>
+        <div class="category-footer">
+            <span>アプリ入力：<strong>立替金</strong></span>
+        </div>
+    </div>
+
+    <div class="category-card">
+        <div class="category-header">
+            <span>雑費</span>
+            <span class="burden-tag tag-indie">IndieWork負担</span>
+        </div>
+        <div class="category-body">
+            <ul>
+                <li>その他</li>
+            </ul>
+        </div>
+        <div class="category-footer">
+            <span>アプリ入力：<strong>立替金</strong></span>
+        </div>
+    </div>
 
     <h2>✍️ 3. 会計アプリでの具体的な仕訳例（ケーススタディ）</h2>
 
