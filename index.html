@@ -70,6 +70,28 @@
         .tag-blue { background: #0056b3; }
         .red-text { color: #d63031; font-weight: bold; }
 
+        /* テーブル設定 */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.85em;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .data-table th {
+            background-color: #e9ecef;
+            white-space: nowrap;
+        }
+        .data-table ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
         /* ETC画像エリア */
         .etc-image-container {
             text-align: center;
@@ -114,25 +136,6 @@
             margin-bottom: 5px;
             font-size: 0.9em;
         }
-
-        /* データカード */
-        .data-card {
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-        .card-title {
-            background-color: #e9ecef;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 1em;
-            border-bottom: 1px solid #dee2e6;
-        }
-        .card-body { padding: 10px; font-size: 0.9em; }
-        .card-row { margin-bottom: 5px; display: flex; }
-        .label { font-weight: bold; min-width: 80px; color: #666; }
-        .value { flex: 1; }
     </style>
 </head>
 <body>
@@ -176,7 +179,82 @@
     </div>
 
     <h2>📂 1. カテゴリー別 負担区分（フォーム項目順）</h2>
-    <div class="data-card"><div class="card-title">旅費交通費 / 食事手当 / 車両費</div><div class="card-body">負担元：IndieWork負担 / アプリ入力：<strong>立替金</strong></div></div>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>カテゴリー（用途）</th>
+                <th>詳細内容</th>
+                <th>負担元</th>
+                <th>アプリ入力</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>旅費交通費</td>
+                <td>
+                    <ul>
+                        <li>ガソリン代（基準燃料費超過分のみ）</li>
+                        <li>駐車場代</li>
+                        <li>高速道路代</li>
+                        <li>宿泊代</li>
+                        <li>公共交通機関</li>
+                        <li>新幹線代・飛行機代</li>
+                        <li>フェリー車両輸送代（通常輸送分）</li>
+                    </ul>
+                </td>
+                <td>IndieWork負担</td>
+                <td rowspan="6" style="text-align: center; vertical-align: middle;"><strong>立替金</strong></td>
+            </tr>
+            <tr>
+                <td>食事手当</td>
+                <td>
+                    <ul>
+                        <li>食事手当（8%）</li>
+                        <li>食事手当（10%）</li>
+                    </ul>
+                </td>
+                <td>IndieWork負担</td>
+            </tr>
+            <tr>
+                <td>車両費</td>
+                <td>
+                    <ul>
+                        <li>メンテナンス代</li>
+                        <li>修理代</li>
+                        <li>フェリー車両輸送代（Google依頼分）</li>
+                    </ul>
+                </td>
+                <td style="background-color: #fff3cd; color: #d63031; font-weight: bold;">Google負担</td>
+            </tr>
+            <tr>
+                <td>荷造運搬費</td>
+                <td>
+                    <ul>
+                        <li>レターパック、宅急便代</li>
+                    </ul>
+                </td>
+                <td>IndieWork負担</td>
+            </tr>
+            <tr>
+                <td>通信費</td>
+                <td>
+                    <ul>
+                        <li>SIMカード代</li>
+                    </ul>
+                </td>
+                <td>IndieWork負担</td>
+            </tr>
+            <tr>
+                <td>雑費</td>
+                <td>
+                    <ul>
+                        <li>その他</li>
+                    </ul>
+                </td>
+                <td>IndieWork負担</td>
+            </tr>
+        </tbody>
+    </table>
 
     <h2>✍️ 3. 会計アプリでの具体的な仕訳例（ケーススタディ）</h2>
 
