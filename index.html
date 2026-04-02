@@ -89,14 +89,7 @@
         }
         .category-body { padding: 12px; font-size: 0.9em; }
         .category-body ul { margin: 0; padding-left: 20px; }
-        .category-footer { 
-            background: #f8f9fa; 
-            padding: 8px 12px; 
-            font-size: 0.85em; 
-            border-top: 1px dashed #dee2e6;
-            display: flex;
-            justify-content: space-between;
-        }
+        
         .burden-tag { 
             padding: 2px 8px; 
             border-radius: 4px; 
@@ -105,6 +98,15 @@
         }
         .tag-indie { background: #e2e3e5; color: #383d41; }
         .tag-google { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+
+        /* 解説ボックス */
+        .beginner-guide {
+            background-color: #fdfdfe;
+            border: 1px solid #0056b3;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
 
         /* ETC画像エリア */
         .etc-image-container {
@@ -283,23 +285,38 @@
 
     <h2>✍️ 3. 会計アプリでの具体的な仕訳例（ケーススタディ）</h2>
 
+    <div class="beginner-guide">
+        <span class="warning-title" style="color: #0056b3;">💡 はじめて会計アプリを使う方へ：この作業の意味</span>
+        <p style="font-size: 0.9em; margin-bottom: 10px;">
+            「売上」と「入金」を直接つなぐのではなく、一度<b>「売掛金（うりかけきん）」</b>という箱を通すのが会計のルールです。
+        </p>
+        <ul style="font-size: 0.85em; padding-left: 20px;">
+            <li><strong>月末のパッキング（売掛金）：</strong><br>「報酬」と「立替金」をまとめ、<b>『来月〇〇円もらえるチケット』</b>を1枚作る作業です。</li>
+            <li><strong>入金時のチェック（消し込み）：</strong><br>銀行にお金が入った時、チケットに<b>『済』ハンコ</b>を押して消去する作業です。</li>
+        </ul>
+        <p style="font-size: 0.85em; margin-top: 10px; padding: 8px; background: #eefbff; border-radius: 4px;">
+            ※これをしないと「売上」を二重に入力してしまい、税金計算が間違ってしまうので注意しましょう！
+        </p>
+    </div>
+
     <div class="info-tag">STEP 1：発生のつど（3月中の各日）</div>
     <div class="example-box">
         <strong>【立替経費が発生したとき】</strong><br>
         (借) <span class="highlight">立替金</span> 5,000円 / (貸) 事業主借 5,000円<br>
+        <small>※3月中に合計で55,000円分を都度入力している状態とします。</small>
     </div>
 
     <div class="info-tag tag-red">STEP 2：◯月◯日（請求時）※一本化の作業</div>
     <div class="example-box" style="border-color: #d63031;">
         <strong>【ケース：報酬30万、車両リース2万、立替合計5.5万の場合】</strong><br>
-        振替伝票入力で、これらを1つの「売掛金」にまとめます。<br><br>
+        振替伝票入力で、これらを1つの「売掛金」というチケットにまとめます。<br><br>
         (借) <span class="highlight">売掛金</span> 335,000円 / (貸) <b>売上高</b> 300,000円<br>
         (借) <b>地代家賃</b> 20,000円 / (貸) <span class="highlight">立替金</span> 55,000円<br>
         
         <p style="margin-top:10px; font-size: 0.9em; background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #ffc9c9;">
             💡 <strong>計算式：</strong><br>
             (報酬 30万 + 立替 5.5万) － リース 2万 ＝ <b>入金予定額 33.5万</b><br>
-            この「入金予定額」を売掛金として登録するのがポイントです。
+            この「入金予定額」が、来月振り込まれるチケットの金額になります。
         </p>
     </div>
 
@@ -308,15 +325,15 @@
         <strong>【実際に335,000円が振り込まれたら】</strong><br>
         (借) 普通預金 335,000円 / (貸) <span class="highlight">売掛金</span> 335,000円<br><br>
         <div style="background: #eefbff; padding: 10px; border-radius: 4px; border: 1px solid #0056b3;">
-            💡 <strong>完了！</strong><br>
-            入金時は、前月末に作った「売掛金」を消し込むだけです。これで前月分の経理処理が正しく完了します。
+            💡 <strong>チケットの使用（消し込み）完了！</strong><br>
+            入金時は「売上」ではなく、前月末に作ったチケット（売掛金）を消去します。
         </div>
     </div>
 
     <h2>🙋‍♂️ よくある質問（Q&A）</h2>
     <div class="example-box">
         <strong>Q. なぜ月末に売掛金にまとめるのですか？</strong><br>
-        A. 入金額は「報酬」や「立替金」が混ざった数字であり、そのまま全てを売上として計上すると二重計上になります。なので月末に「売掛金」という箱に全てパッキングすることで、正確な利益管理ができます。
+        A. 入金額は「報酬」や「立替金」が混ざった数字であり、そのまま売上にすると二重計上になるからです。月末に「売掛金」という箱に全てパッキングすることで、正確な利益管理ができます。
     </div>
 
     <div class="example-box" style="border: 2px solid #34a853;">
