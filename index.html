@@ -91,9 +91,11 @@
         .category-body ul { margin: 0; padding-left: 20px; }
         .category-footer { 
             background: #f8f9fa; 
-            padding: 10px 12px; 
+            padding: 8px 12px; 
             font-size: 0.85em; 
             border-top: 1px dashed #dee2e6;
+            display: flex;
+            justify-content: space-between;
         }
         .burden-tag { 
             padding: 2px 8px; 
@@ -165,7 +167,7 @@
     <div class="flow-chart">
         <div class="flow-step">
             <div class="step-date">月初〜24日</div>
-            <div class="step-content"><b>保管と随時報告：</b>レシートを保管. 確定したものから順次報告してください。</div>
+            <div class="step-content"><b>保管と随時報告：</b>レシートを保管。確定したものから順次報告してください。</div>
         </div>
         <div class="flow-step">
             <div class="step-date" style="background-color: #d63031;">25日〜末日</div>
@@ -192,6 +194,12 @@
 
     <h2>📂 1. カテゴリー別 負担区分（フォーム項目順）</h2>
     
+    <div class="example-box" style="border: 2px solid #0056b3; background-color: #f0f8ff;">
+        <span class="info-tag tag-blue" style="margin-bottom: 5px;">アプリ入力共通ルール</span><br>
+        以下のカテゴリーはすべて<strong>「立替金」</strong>で入力してください。<br>
+        仕訳：<span class="highlight">借方：立替金</span> / <span class="highlight">貸方：事業主借（または現金）</span>
+    </div>
+
     <div class="category-card">
         <div class="category-header">
             <span>旅費交通費</span>
@@ -208,10 +216,6 @@
                 <li>フェリー車両輸送代（通常輸送分）</li>
             </ul>
         </div>
-        <div class="category-footer">
-            アプリ入力：<strong>立替金</strong><br>
-            <span style="color: #666;">（借方：立替金 / 貸方：事業主借 または 現金）</span>
-        </div>
     </div>
 
     <div class="category-card">
@@ -224,10 +228,6 @@
                 <li>食事手当（8%）</li>
                 <li>食事手当（10%）</li>
             </ul>
-        </div>
-        <div class="category-footer">
-            アプリ入力：<strong>立替金</strong><br>
-            <span style="color: #666;">（借方：立替金 / 貸方：事業主借 または 現金）</span>
         </div>
     </div>
 
@@ -243,10 +243,6 @@
                 <li>フェリー車両輸送代（Google依頼分）</li>
             </ul>
         </div>
-        <div class="category-footer">
-            アプリ入力：<strong>立替金</strong><br>
-            <span style="color: #666;">（借方：立替金 / 貸方：事業主借 または 現金）</span>
-        </div>
     </div>
 
     <div class="category-card">
@@ -258,10 +254,6 @@
             <ul>
                 <li>レターパック、宅急便代</li>
             </ul>
-        </div>
-        <div class="category-footer">
-            アプリ入力：<strong>立替金</strong><br>
-            <span style="color: #666;">（借方：立替金 / 貸方：事業主借 または 現金）</span>
         </div>
     </div>
 
@@ -275,10 +267,6 @@
                 <li>SIMカード代</li>
             </ul>
         </div>
-        <div class="category-footer">
-            アプリ入力：<strong>立替金</strong><br>
-            <span style="color: #666;">（借方：立替金 / 貸方：事業主借 または 現金）</span>
-        </div>
     </div>
 
     <div class="category-card">
@@ -290,10 +278,6 @@
             <ul>
                 <li>その他</li>
             </ul>
-        </div>
-        <div class="category-footer">
-            アプリ入力：<strong>立替金</strong><br>
-            <span style="color: #666;">（借方：立替金 / 貸方：事業主借 または 現金）</span>
         </div>
     </div>
 
@@ -326,7 +310,7 @@
         (借) 普通預金 335,000円 / (貸) <span class="highlight">売掛金</span> 335,000円<br><br>
         <div style="background: #eefbff; padding: 10px; border-radius: 4px; border: 1px solid #0056b3;">
             💡 <strong>完了！</strong><br>
-            入金時は「売上」ではなく、前月末に作った「売掛金」を消し込むだけです。
+            入金時は、前月末に作った「売掛金」を消し込むだけです。これで前月分の経理処理が正しく完了します。
         </div>
     </div>
 
@@ -339,7 +323,7 @@
     <div class="example-box" style="border: 2px solid #34a853;">
         <strong>Q. Amazon等でオンライン購入した際の領収書・宛名はどうすればいいですか？</strong><br>
         A. 正しくIndieWorkの経費として計上し、適格請求書（インボイス）を確保するため、購入時の氏名登録を工夫してください。<br>
-        <span class="red-text">「自身の氏名」の後に「IndieWork合同会社」</span>という名前を付け加えて登録・発行するようにしてください。
+        <span class="red-text">「自身の氏名」の後に「インディーワーク合同会社」</span>という名前を付け加えて登録・発行するようにしてください。
     </div>
 
     <div class="warning-box">
