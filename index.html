@@ -1,743 +1,327 @@
 <!DOCTYPE html>
-
 <html lang="ja">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>立替金精算・会計アプリ入力マニュアル</title>
-
     <style>
-
         /* ベース設定 */
-
         body { 
-
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; 
-
             line-height: 1.6; 
-
             color: #333; 
-
             margin: 0; 
-
             padding: 10px; 
-
             background-color: #f0f4f8; 
-
         }
-
         .container { 
-
             max-width: 100%; 
-
             margin: 0 auto; 
-
             background: white; 
-
             padding: 20px 15px; 
-
             border-radius: 12px; 
-
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-
         }
-
-
 
         /* 見出し */
-
         h1 { 
-
             color: #d63031; 
-
             border-bottom: 3px solid #d63031; 
-
             padding-bottom: 15px; 
-
             text-align: center; 
-
             font-size: 1.4em;
-
             margin-bottom: 25px; 
-
         }
-
         h2 { 
-
             background: #0056b3; 
-
             color: white; 
-
             padding: 10px 15px; 
-
             border-radius: 6px; 
-
             margin-top: 30px; 
-
             font-size: 1.1em;
-
         }
-
-
 
         /* リンクボタン */
-
         .btn-link { 
-
             display: block; 
-
             width: 100%; 
-
             box-sizing: border-box;
-
             text-align: center; 
-
             background: #34a853; 
-
             color: white; 
-
             padding: 18px; 
-
             border-radius: 8px; 
-
             text-decoration: none; 
-
             font-weight: bold; 
-
             font-size: 1.1em; 
-
             margin: 20px 0; 
-
             box-shadow: 0 4px 0 #2d8e47; 
-
         }
-
-
 
         /* ボックス類 */
-
         .highlight { background-color: #fff3cd; padding: 2px 4px; font-weight: bold; border-radius: 4px; color: #d9534f; }
-
         .warning-box { background: #fff5f5; border: 2px solid #ffc9c9; padding: 15px; border-radius: 8px; margin: 20px 0; }
-
         .warning-title { color: #d63031; font-weight: bold; font-size: 1.1em; margin-bottom: 8px; display: block; }
-
         .danger-box { background: #ffebeb; border: 2px solid #d63031; padding: 15px; border-radius: 8px; margin: 20px 0; font-size: 0.95em; }
-
         .example-box { border: 2px dashed #adb5bd; padding: 15px; background: #f8f9fa; margin-bottom: 15px; border-radius: 8px; font-size: 0.95em; }
-
         .info-tag { background: #6c757d; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8em; margin-bottom: 10px; display: inline-block; }
-
         .tag-red { background: #d63031; }
-
         .tag-purple { background: #6f42c1; }
-
         .tag-blue { background: #0056b3; }
-
         .red-text { color: #d63031; font-weight: bold; }
 
-
-
         /* 初心者向け解説ボックス */
-
         .beginner-guide {
-
             background-color: #fdfdfe;
-
             border: 1px solid #0056b3;
-
             padding: 15px;
-
             border-radius: 8px;
-
             margin-bottom: 20px;
-
         }
-
-
 
         /* スマホ向けカードスタイル */
-
         .category-card {
-
             border: 1px solid #dee2e6;
-
             border-radius: 8px;
-
             margin-bottom: 15px;
-
             overflow: hidden;
-
             background: #fff;
-
         }
-
         .category-header {
-
             background-color: #e9ecef;
-
             padding: 8px 12px;
-
             font-weight: bold;
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
             border-bottom: 1px solid #dee2e6;
-
         }
-
         .category-body { padding: 12px; font-size: 0.9em; }
-
         .category-body ul { margin: 0; padding-left: 20px; }
-
         
-
         .burden-tag { 
-
             padding: 2px 8px; 
-
             border-radius: 4px; 
-
             font-weight: bold; 
-
             font-size: 0.85em;
-
         }
-
         .tag-indie { background: #e2e3e5; color: #383d41; }
-
         .tag-google { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
 
-
-
         /* ETC画像エリア */
-
         .etc-image-container {
-
             text-align: center;
-
             margin: 15px 0;
-
             border: 1px solid #ddd;
-
             padding: 10px;
-
             border-radius: 8px;
-
             background: #fff;
-
         }
-
         .etc-image-container img {
-
             max-width: 100%;
-
             height: auto;
-
             border-radius: 4px;
-
         }
-
-
 
         /* スケジュール */
-
         .flow-chart { margin: 20px 0; }
-
         .flow-step { 
-
             background: #fff; 
-
             border: 2px solid #0056b3; 
-
             border-radius: 8px; 
-
             padding: 12px; 
-
             margin-bottom: 15px;
-
             position: relative;
-
         }
-
         .flow-step::after { 
-
             content: '▼'; 
-
             position: absolute; 
-
             bottom: -18px; 
-
             left: 20px; 
-
             color: #0056b3; 
-
             font-size: 12px; 
-
         }
-
         .flow-step:last-child::after { content: ''; }
-
         .step-date { 
-
             background: #0056b3; 
-
             color: white; 
-
             padding: 2px 8px; 
-
             border-radius: 4px; 
-
             font-weight: bold; 
-
             display: inline-block;
-
             margin-bottom: 5px;
-
             font-size: 0.9em;
-
         }
-
     </style>
-
 </head>
-
 <body>
 
-
-
 <div class="container">
-
     <h1>🚀 立替金精算・会計アプリ入力マニュアル</h1>
-
     
-
     <div class="warning-box">
-
         <span class="warning-title">【重要】精算方法の変更について</span>
-
         <strong>「1ヶ月分をカテゴリーごとにまとめて合計金額で報告」</strong>してください。<br>
-
         <small>※レシートが多くなる場合は、<strong>1週間単位などこまめに報告</strong>していただいても構いません。</small>
-
     </div>
-
-
 
     <h2>📅 1ヶ月の精算スケジュール</h2>
-
     <div class="flow-chart">
-
         <div class="flow-step">
-
             <div class="step-date">月初〜24日</div>
-
             <div class="step-content"><b>保管と随時報告：</b>レシートを保管。確定したものから順次報告してください。</div>
-
         </div>
-
         <div class="flow-step">
-
             <div class="step-date" style="background-color: #d63031;">25日〜末日</div>
-
             <div class="step-content"><b>報告締切：</b>残りをすべて報告。<b>必ずこの期間内に完了してください。</b></div>
-
         </div>
-
         <div class="flow-step">
-
             <div class="step-date">翌月15日</div>
-
             <div class="step-content"><b>入金確認：</b>報酬と立替金が合算で入金されます。</div>
-
         </div>
-
     </div>
-
-
 
     <a href="https://forms.gle/eYyCgMtLQb4MG3Rb9" class="btn-link" target="_blank">📲 報告用 Google フォームはこちら</a>
 
-
-
     <h2>🛣️ ETC利用証明書の提出ルール（最重要）</h2>
-
     <div class="danger-box" style="border-color: #0056b3; background-color: #f0f8ff;">
-
         <span class="warning-title" style="color: #0056b3;">インボイス番号（T番号）入りが必須です</span>
-
         ETC利用に関しては、必ずインボイス登録番号（T番号）が記載された「確定後」の証明書を提出してください。
-
         
-
         <div class="etc-image-container">
-
             <img src="Screenshot 2026-03-26 at 9.55.27.png" alt="ETC利用証明書の比較">
-
             <p style="font-size: 0.8em; color: #666;">※右側の【確定後】（T番号あり）を提出してください</p>
-
         </div>
-
     </div>
 
-
-
-    <h2>📂 1. カテゴリー別 負担区分（フォーム項目順）</h2>
-
+    <h2>📂 1. カテゴリー別 負担区分・税区分</h2>
     
-
     <div class="example-box" style="border: 2px solid #0056b3; background-color: #f0f8ff;">
-
         <span class="info-tag tag-blue" style="margin-bottom: 5px;">アプリ入力共通ルール</span><br>
-
         以下のカテゴリーはすべて<strong>「立替金」</strong>で入力してください。<br>
-
-        仕訳：<span class="highlight">借方：立替金</span> / <span class="highlight">貸方：事業主借（または現金）</span>
-
+        仕訳：<span class="highlight">借方：立替金</span> / <span class="highlight">貸方：事業主借（または現金）</span><br>
+        <span class="red-text">※税区分：原則として「対象外」または「非課税」を選択</span>（立替金そのものは経費ではないため）
     </div>
-
-
 
     <div class="category-card">
-
         <div class="category-header">
-
-            <span>旅費交通費</span>
-
-            <span class="burden-tag tag-indie">IndieWork負担</span>
-
+            <span>旅費交通費（IndieWork負担）</span>
+            <span class="burden-tag tag-indie">課税 10%</span>
         </div>
-
         <div class="category-body">
-
             <ul>
-
-                <li>ガソリン代（基準燃料費超過分のみ）</li>
-
-                <li>駐車場代</li>
-
-                <li>高速道路代</li>
-
-                <li>宿泊代</li>
-
-                <li>公共交通機関</li>
-
-                <li>新幹線代・飛行機代</li>
-
-                <li>フェリー車両輸送代（通常輸送分）</li>
-
+                <li>ガソリン代・駐車場代・高速道路代</li>
+                <li>宿泊代・公共交通機関・新幹線・飛行機代</li>
+                <li>フェリー車両輸送代（通常分）</li>
             </ul>
-
         </div>
-
     </div>
-
-
 
     <div class="category-card">
-
         <div class="category-header">
-
-            <span>食事手当</span>
-
-            <span class="burden-tag tag-indie">IndieWork負担</span>
-
+            <span>食事手当（IndieWork負担）</span>
+            <span class="burden-tag tag-indie">課税 8%/10%</span>
         </div>
-
         <div class="category-body">
-
             <ul>
-
-                <li>食事手当（8%）</li>
-
-                <li>食事手当（10%）</li>
-
+                <li>食事手当（軽減税率 8%）：テイクアウト、飲料等</li>
+                <li>食事手当（標準税率 10%）：店内飲食等</li>
             </ul>
-
         </div>
-
     </div>
-
-
 
     <div class="category-card" style="border: 1px solid #ffeeba;">
-
         <div class="category-header" style="background-color: #fff3cd;">
-
-            <span>車両費</span>
-
-            <span class="burden-tag tag-google">Google負担</span>
-
+            <span>車両費（Google負担）</span>
+            <span class="burden-tag tag-google">課税 10%</span>
         </div>
-
         <div class="category-body">
-
             <ul>
-
-                <li>メンテナンス代</li>
-
-                <li>修理代</li>
-
+                <li>メンテナンス代・修理代</li>
                 <li>フェリー車両輸送代（Google依頼分）</li>
-
             </ul>
-
         </div>
-
     </div>
-
-
 
     <div class="category-card">
-
         <div class="category-header">
-
-            <span>荷造運搬費</span>
-
-            <span class="burden-tag tag-indie">IndieWork負担</span>
-
+            <span>荷造運搬費・通信費（IndieWork負担）</span>
+            <span class="burden-tag tag-indie">課税 10%</span>
         </div>
-
         <div class="category-body">
-
             <ul>
-
-                <li>レターパック、宅急便代</li>
-
+                <li>レターパック、宅急便代、SIMカード代</li>
             </ul>
-
         </div>
-
     </div>
 
-
-
-    <div class="category-card">
-
-        <div class="category-header">
-
-            <span>通信費</span>
-
-            <span class="burden-tag tag-indie">IndieWork負担</span>
-
-        </div>
-
-        <div class="category-body">
-
-            <ul>
-
-                <li>SIMカード代</li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="category-card">
-
-        <div class="category-header">
-
-            <span>雑費</span>
-
-            <span class="burden-tag tag-indie">IndieWork負担</span>
-
-        </div>
-
-        <div class="category-body">
-
-            <ul>
-
-                <li>その他</li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-
-
-    <h2>✍️ 3. 会計アプリでの具体的な仕訳例（ケーススタディ）</h2>
-
-
+    <h2>✍️ 2. 会計アプリでの具体的な仕訳例（ケーススタディ）</h2>
 
     <div class="beginner-guide">
-
-        <span class="warning-title" style="color: #0056b3;">💡 会計アプリが初めての方へ：この作業の意味</span>
-
+        <span class="warning-title" style="color: #0056b3;">💡 消費税区分の考え方</span>
         <p style="font-size: 0.9em; margin-bottom: 10px;">
-
-            「売上」と「入金」を直接つなぐのではなく、一度<b>「売掛金（うりかけきん）」</b>という箱を通すのが会計のルールです。
-
+            自分自身の経費として入力する場合は「課税」を選びますが、<b>立替金として入力する場合</b>、アプリの種類によっては区分が異なります。
         </p>
-
         <ul style="font-size: 0.85em; padding-left: 20px;">
-
-            <li><strong>月末のパッキング（売掛金）：</strong><br>「報酬」と「立替金」をまとめ、<b>『来月〇〇円もらえるチケット＝請求書に記載されている〇〇円』</b>を1枚作る作業です。</li>
-
-            <li><strong>入金時のチェック（消し込み）：</strong><br>銀行にお金が入った時、チケットに<b>『済』ハンコ</b>を押して消去する作業です。</li>
-
+            <li><strong>立替金入力時：</strong>消費税は「対象外（または非課税）」で入力。</li>
+            <li><strong>売上高入力時：</strong>「課税売上 10%」で入力。</li>
+            <li><strong>理由：</strong>立替金は「後で返ってくるお金」であり、あなたの売上や経費そのものではないからです。</li>
         </ul>
-
-        <p style="font-size: 0.85em; margin-top: 10px; padding: 8px; background: #eefbff; border-radius: 4px;">
-
-            ※これをしないと「売上」を二重に入力してしまい、税金計算が間違ってしまうので注意しましょう！
-
-        </p>
-
     </div>
-
-
 
     <div class="info-tag">STEP 1：発生のつど（3月中の各日）</div>
-
     <div class="example-box">
-
         <strong>【立替経費が発生したとき】</strong><br>
-
-        (借) <span class="highlight">立替金</span> 5,000円 / (貸) 事業主借 5,000円<br>
-
-        <small>※3月中に合計で55,000円分を都度入力している状態とします。</small>
-
+        (借) <span class="highlight">立替金</span> 5,000円 <small>[対象外]</small> / (貸) 事業主借 5,000円 <small>[対象外]</small><br>
+        <small>※レシートが10%課税でも、自分の帳簿上は「立替金（資産）」なので消費税は計算しません。</small>
     </div>
-
-
 
     <div class="info-tag tag-red">STEP 2：◯月◯日（請求時）※一本化の作業</div>
-
     <div class="example-box" style="border-color: #d63031;">
-
         <strong>【ケース：報酬30万、車両リース2万、立替合計5.5万の場合】</strong><br>
-
-        振替伝票入力で、これらを1つの「売掛金」というチケットにまとめます。<br><br>
-
-        (借) <span class="highlight">売掛金</span> 335,000円 / (貸) <b>売上高</b> 300,000円<br>
-
-        (借) <b>地代家賃</b> 20,000円 / (貸) <span class="highlight">立替金</span> 55,000円<br>
-
+        振替伝票入力で一本化します。<br><br>
+        (借) <span class="highlight">売掛金</span> 335,000円 <small>[対象外]</small> / (貸) <b>売上高</b> 300,000円 <small>[課税売上 10%]</small><br>
+        (借) <b>地代家賃</b> 20,000円 <small>[課税仕入 10%]</small> / (貸) <span class="highlight">立替金</span> 55,000円 <small>[対象外]</small><br>
         
-
         <p style="margin-top:10px; font-size: 0.9em; background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #ffc9c9;">
-
-            💡 <strong>計算式：</strong><br>
-
-            (報酬 30万 + 立替 5.5万) － リース 2万 ＝ <b>入金予定額 33.5万</b><br>
-
-            この「入金予定額」が、来月振り込まれるチケットの金額になります。
-
+            💡 <strong>注意：</strong>売上高には必ず<b>「課税売上 10%」</b>を適用してください。<br>
+            立替金の取り消しは、入金時に相殺されるため「対象外」のまま動かします。
         </p>
-
     </div>
-
-
 
     <div class="info-tag tag-blue">STEP 3：◯月◯日（入金時）</div>
-
     <div class="example-box" style="border-color: #0056b3;">
-
         <strong>【実際に335,000円が振り込まれたら】</strong><br>
-
-        (借) 普通預金 335,000円 / (貸) <span class="highlight">売掛金</span> 335,000円<br><br>
-
-        <div style="background: #eefbff; padding: 10px; border-radius: 4px; border: 1px solid #0056b3;">
-
-            💡 <strong>チケットの使用（消し込み）完了！</strong><br>
-
-            入金時は「売上」ではなく、前月末に作ったチケット（売掛金）を消去します。
-
-        </div>
-
+        (借) 普通預金 335,000円 <small>[対象外]</small> / (貸) <span class="highlight">売掛金</span> 335,000円 <small>[対象外]</small><br>
     </div>
-
-
 
     <h2>🙋‍♂️ よくある質問（Q&A）</h2>
 
-
-
     <div class="example-box" style="border: 2px solid #0056b3;">
-
         <strong>Q. 立替フォーム提出時、インボイスあり・なしの領収書をまとめて出してもいいですか？</strong><br>
-
         A. いいえ。必ず<span class="red-text">「インボイスありの領収書」と「インボイスなしの領収書」をカテゴリー（提出単位）を分けて</span>提出してください。<br>
-
-        ※ただし、<b>公共交通機関</b>に関しては特例により、レシート上にインボイス番号の記載がなくても「インボイスあり」として認められています。これらは「インボイスあり」として処理・提出してください。
-
+        ※<b>公共交通機関</b>は特例で、記載がなくても「インボイスあり」として扱います。
     </div>
-
-
 
     <div class="example-box">
-
-        <strong>Q. なぜ月末に売掛金にまとめるのですか？</strong><br>
-
-        A. 入金額は「報酬」や「立替金」が混ざった数字であり、そのまま売上にすると二重計上になるからです。
-
+        <strong>Q. 郵便局のレターパックにインボイス番号がないのですが？</strong><br>
+        A. 郵便切手やレターパックは、<b>「購入時（窓口・コンビニ）」ではなく「使用時」</b>に消費税が発生する特殊な扱いです。窓口発行の受領証に番号がなくても、通常通り「荷造運搬費」として報告して問題ありません。
     </div>
-
-
 
     <div class="example-box" style="border: 2px solid #d63031;">
-
-        <strong>Q. 番号のないレシートをもらってしまいました。どうすればいいですか？</strong><br>
-
-        A. インボイス番号がないものは、IndieWorkでの<span class="red-text">経費精算ができません。</span>番号が載ったものを再取得してください。再取得できない場合は、自己負担となることがあります。
-
+        <strong>Q. 番号のないレシート（免税事業者）の場合、税区分はどうなりますか？</strong><br>
+        A. インボイス番号がないものは、IndieWorkで消費税控除ができないため、原則として<span class="red-text">「精算対象外（自己負担）」</span>となります。必ず番号を確認してください。
     </div>
-
-
-
-    <div class="example-box" style="border: 2px solid #34a853;">
-
-        <strong>Q. Amazonで販売業者が海外のため、インボイス番号がない場合は？</strong><br>
-
-        A. インボイス制度は国内業者向けのため、<span class="highlight">海外業者には適用されません。</span>番号がなくてもそのまま提出して大丈夫です。ただし、宛名が「IndieWork合同会社」になっているか必ず確認してください。
-
-    </div>
-
-
-
-    <div class="example-box" style="border: 2px solid #34a853;">
-
-        <strong>Q. Amazon等での領収書・宛名設定や提出形式はどうすればいいですか？</strong><br>
-
-        A. 登録氏名を「自身の氏名＋IndieWork合同会社」とし、スクショではなく<span class="red-text">原則PDF</span>で提出してください。
-
-    </div>
-
-
 
     <div class="warning-box">
-
         <span class="warning-title">⚠️ 徹底事項</span>
-
         <ol style="padding-left: 20px;">
-
             <li><strong>宛名は「IndieWork合同会社」</strong></li>
-
             <li><strong>インボイス番号（T番号）を必ず確認</strong></li>
-
-            <li><strong>確定したものから随時出す</strong></li>
-
+            <li><strong>帳簿の税区分は「立替金＝対象外」「売上＝課税10%」</strong></li>
         </ol>
-
     </div>
-
 </div>
 
-
-
 </body>
-
 </html>
