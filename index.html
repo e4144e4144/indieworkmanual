@@ -291,7 +291,7 @@
             「売上」と「入金」を直接つなぐのではなく、一度<b>「売掛金（うりかけきん）」</b>という箱を通すのが会計のルールです。
         </p>
         <ul style="font-size: 0.85em; padding-left: 20px;">
-            <li><strong>月末のパッキング（売掛金）：</strong><br>「報酬」と「立替金」をまとめ、<b>『来月〇〇円もらえるチケット＝請求書に記載されている〇〇円』</b>を1枚作る作業です。</li>
+            <li><strong>月末のパッキング（売掛金）：</strong><br>「報酬」と「立替金」をまとめ、リース代などの控除を反映させて、<b>『来月実際に振り込まれる予定額のチケット』</b>を作る作業です。</li>
             <li><strong>入金時のチェック（消し込み）：</strong><br>銀行にお金が入った時、チケットに<b>『済』ハンコ</b>を押して消去する作業です。</li>
         </ul>
         <p style="font-size: 0.85em; margin-top: 10px; padding: 8px; background: #eefbff; border-radius: 4px;">
@@ -314,9 +314,10 @@
         (借) <b>地代家賃</b> 20,000円 / (貸) <span class="highlight">立替金</span> 55,000円<br>
         
         <p style="margin-top:10px; font-size: 0.9em; background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #ffc9c9;">
-            💡 <strong>計算式：</strong><br>
-            (報酬 30万 + 立替 5.5万) － リース 2万 ＝ <b>入金予定額 33.5万</b><br>
-            この「入金予定額」が、来月振り込まれるチケットの金額になります。
+            💡 <strong>計算の考え方：</strong><br>
+            ・貸方の合計（35.5万）＝ 本来もらう権利がある総額<br>
+            ・借方の売掛金（33.5万）＝ 総額からリース代2万を引いた、<b>実際の入金予定額</b><br>
+            ・借方の地代家賃（2万）＝ 報酬から引かれる形で支払った経費
         </p>
     </div>
 
@@ -326,7 +327,7 @@
         (借) 普通預金 335,000円 / (貸) <span class="highlight">売掛金</span> 335,000円<br><br>
         <div style="background: #eefbff; padding: 10px; border-radius: 4px; border: 1px solid #0056b3;">
             💡 <strong>チケットの使用（消し込み）完了！</strong><br>
-            入金時は「売上」ではなく、前月末に作ったチケット（売掛金）を消去します。
+            STEP 2で作った「335,000円のチケット（売掛金）」を貸方に持ってきて相殺します。これで帳簿上の未回収残高がゼロになります。
         </div>
     </div>
 
