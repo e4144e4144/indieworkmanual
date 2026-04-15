@@ -148,20 +148,6 @@
         .tag-indie { background: #e2e3e5; color: #383d41; }
         .tag-google { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
 
-        .image-container {
-            text-align: center;
-            margin: 15px 0;
-            border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 8px;
-            background: #fff;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
         .flow-chart { margin: 20px 0; }
         .flow-step { 
             background: #fff; 
@@ -225,11 +211,6 @@
     <div class="danger-box" style="border-color: #0056b3; background-color: #f0f8ff;">
         <span class="warning-title" style="color: #0056b3;">インボイス番号（T番号）入りが必須です</span>
         ETC利用に関しては、必ずインボイス登録番号（T番号）が記載された「確定後」の証明書を提出してください。
-        
-        <div class="image-container">
-            <img src="Screenshot 2026-03-26 at 9.55.27.png" alt="ETC利用証明書の比較">
-            <p style="font-size: 0.8em; color: #666;">※右側の【確定後】（T番号あり）を提出してください</p>
-        </div>
     </div>
 
     <h2>📂 1. カテゴリー別 負担区分・税区分</h2>
@@ -297,131 +278,4 @@
 
     <div class="beginner-guide">
         <span class="warning-title" style="color: #0056b3;">💡 消費税区分の考え方</span>
-        <p style="font-size: 0.9em; margin-bottom: 10px;">
-            自分自身の経費として入力する場合は「課税」を選びますが、<b>立替金として入力する場合</b>、アプリの種類によっては区分が異なります。
-        </p>
-        <ul style="font-size: 0.85em; padding-left: 20px;">
-            <li><strong>立替金入力時：</strong>消費税は「非課税（対象外）」で入力。</li>
-            <li><strong>売上高入力時：</strong>「課税売上 10%」で入力。</li>
-            <li><strong>理由：</strong>立替金は「後で返ってくるお金」であり、あなたの売上や経費そのものではないからです。</li>
-        </ul>
-    </div>
-
-    <div class="info-tag">STEP 1：立替金（IndieWork負担分）の入力</div>
-    <div class="example-box">
-        <strong>【立替経費が発生したとき（例：MF利用料 4,378円の場合）】</strong>
-        <table class="journal-table">
-            <tr><th>借方（左側）</th><th>貸方（右側）</th></tr>
-            <tr>
-                <td>
-                    <span class="journal-label">勘定科目</span>
-                    <span class="journal-amount">立替金</span>
-                    <span class="journal-tax">対象外</span>
-                    <div style="font-weight:bold; margin-top:2px;">4,378円</div>
-                </td>
-                <td>
-                    <span class="journal-label">勘定科目</span>
-                    <span class="journal-amount">事業主借</span>
-                    <span class="journal-tax">対象外</span>
-                    <div style="font-weight:bold; margin-top:2px;">4,378円</div>
-                </td>
-            </tr>
-        </table>
-        <p style="margin-top:10px; font-size: 0.9em;">
-            💡 <strong>ポイント：</strong><br>
-            IndieWorkが負担する費用を一時的に支払った場合は、勘定科目を<b>「立替金」</b>にします。レシートに税額の記載があっても、自分の帳簿上は消費税を計算しない<b>「対象外（または非課税）」</b>で処理してください。
-        </p>
-    </div>
-
-    <div class="info-tag">STEP 2：自身の経費（自己負担分）の入力</div>
-    <div class="example-box">
-        <strong>【自身の経費として入力するとき（例：ガソリン代 3,600円の場合）】</strong>
-        <table class="journal-table">
-            <tr><th>借方（左側）</th><th>貸方（右側）</th></tr>
-            <tr>
-                <td>
-                    <span class="journal-label">勘定科目</span>
-                    <span class="journal-amount">旅費交通費</span>
-                    <span class="journal-tax">課仕 10%</span>
-                    <div style="font-weight:bold; margin-top:2px;">3,600円</div>
-                </td>
-                <td>
-                    <span class="journal-label">勘定科目</span>
-                    <span class="journal-amount">事業主借</span>
-                    <span class="journal-tax">対象外</span>
-                    <div style="font-weight:bold; margin-top:2px;">3,600円</div>
-                </td>
-            </tr>
-        </table>
-        <p style="margin-top:10px; font-size: 0.9em;">
-            💡 <strong>ポイント：</strong><br>
-            自分自身の事業の経費（IndieWorkに請求しないもの）は、適切な経費科目を選択し、<b>「課税（10%等）」</b>の税区分を適用して入力してください。
-        </p>
-    </div>
-
-    <div class="info-tag tag-red">STEP 3：◯月◯日（請求時）※一本化の作業</div>
-    <div class="example-box" style="border-color: #d63031;">
-        <strong>【ケース：報酬30万、車両リース2万、立替合計5万の場合】</strong><br>
-        振替伝票入力で一本化します。
-        
-        <table class="journal-table" style="margin-top: 10px;">
-            <tr><th>借方（左側）</th><th>貸方（右側）</th></tr>
-            <tr>
-                <td>
-                    <span class="journal-amount">売掛金</span>
-                    <span class="journal-tax">対象外</span>
-                    <div style="font-weight:bold;">330,000円</div>
-                </td>
-                <td>
-                    <span class="journal-amount">売上高</span>
-                    <span class="journal-tax">課売 10%</span>
-                    <div style="font-weight:bold;">300,000円</div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="journal-amount">地代家賃</span>
-                    <span class="journal-tax">課仕 10%</span>
-                    <div style="font-weight:bold;">20,000円</div>
-                </td>
-                <td>
-                    <span class="journal-amount">立替金</span>
-                    <span class="journal-tax">対象外</span>
-                    <div style="font-weight:bold;">50,000円</div>
-                </td>
-            </tr>
-        </table>
-        
-        <p style="margin-top:10px; font-size: 0.9em; background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #ffc9c9;">
-            💡 <strong>注意：</strong>売上高には必ず<b>「課税売上 10%」</b>を適用してください。<br>
-            立替金の取り消しは、入金時に相殺されるため「対象外」のまま動かします。
-        </p>
-    </div>
-
-    <div class="info-tag tag-blue">STEP 4：◯月◯日（入金時）</div>
-    <div class="example-box" style="border-color: #0056b3;">
-        <strong>【実際に330,000円が振り込まれたら】</strong>
-        <table class="journal-table">
-            <tr><th>借方（左側）</th><th>貸方（右側）</th></tr>
-            <tr>
-                <td>
-                    <span class="journal-amount">普通預金</span>
-                    <div style="font-weight:bold; margin-top:2px;">330,000円</div>
-                </td>
-                <td>
-                    <span class="journal-amount">売掛金</span>
-                    <div style="font-weight:bold; margin-top:2px;">330,000円</div>
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <h2>🙋‍♂️ よくある質問（Q&A）</h2>
-
-    <div class="example-box" style="border: 2px solid #0056b3;">
-        <strong>Q. 立替フォーム提出時、インボイスあり・なしの領収書をまとめて出してもいいですか？</strong><br>
-        A. いいえ。必ず<span class="red-text">「インボイスありの領収書」と「インボイスなしの領収書」をカテゴリー（提出単位）を分けて</span>提出してください。<br>
-        ※<b>公共交通機関</b>は特例で、記載がなくても「インボイスあり」として扱います。
-    </div>
-
-    <div class="example-
+        <p style="font-size: 0.9em; margin-bottom
