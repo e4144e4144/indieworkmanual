@@ -308,60 +308,54 @@
     </div>
 
     <div class="info-tag">STEP 1：立替金（IndieWork負担分）の入力</div>
-    <div class="image-container">
-        <img src="スクリーンショット 2026-04-15 18.42.59.png" alt="会計アプリ仕訳例（立替金）">
-        <p style="font-size: 0.8em; color: #666;">※「立替金」を使用し、税区分は「対象外」にします</p>
-    </div>
-
     <div class="example-box">
-        <strong>【立替経費が発生したとき】</strong>
+        <strong>【立替経費が発生したとき（例：MF利用料 4,378円の場合）】</strong>
         <table class="journal-table">
-            <tr><th>借方</th><th>貸方</th></tr>
+            <tr><th>借方（左側）</th><th>貸方（右側）</th></tr>
             <tr>
                 <td>
                     <span class="journal-label">勘定科目</span>
                     <span class="journal-amount">立替金</span>
                     <span class="journal-tax">対象外</span>
+                    <div style="font-weight:bold; margin-top:2px;">4,378円</div>
                 </td>
                 <td>
                     <span class="journal-label">勘定科目</span>
                     <span class="journal-amount">事業主借</span>
                     <span class="journal-tax">対象外</span>
+                    <div style="font-weight:bold; margin-top:2px;">4,378円</div>
                 </td>
             </tr>
         </table>
         <p style="margin-top:10px; font-size: 0.9em;">
             💡 <strong>ポイント：</strong><br>
-            IndieWorkが負担する費用を一時的に支払った場合は、勘定科目を<b>「立替金」</b>にします。このお金は後でそのまま戻ってくるものなので、レシートに税額の記載があっても、自分の帳簿上は消費税を計算しない<b>「対象外（または非課税）」</b>で処理してください。
+            IndieWorkが負担する費用を一時的に支払った場合は、勘定科目を<b>「立替金」</b>にします。レシートに税額の記載があっても、自分の帳簿上は消費税を計算しない<b>「対象外（または非課税）」</b>で処理してください。
         </p>
     </div>
 
     <div class="info-tag">STEP 2：自身の経費（自己負担分）の入力</div>
-    <div class="image-container">
-        <img src="スクリーンショット 2026-04-15 19.04.43.png" alt="会計アプリ仕訳例（経費）">
-        <p style="font-size: 0.8em; color: #666;">※「旅費交通費」などの経費科目を使用し、税区分は「課税 10%」にします</p>
-    </div>
-
     <div class="example-box">
-        <strong>【自身の経費として入力するとき】</strong>
+        <strong>【自身の経費として入力するとき（例：ガソリン代 3,600円の場合）】</strong>
         <table class="journal-table">
-            <tr><th>借方</th><th>貸方</th></tr>
+            <tr><th>借方（左側）</th><th>貸方（右側）</th></tr>
             <tr>
                 <td>
                     <span class="journal-label">勘定科目</span>
                     <span class="journal-amount">旅費交通費</span>
                     <span class="journal-tax">課仕 10%</span>
+                    <div style="font-weight:bold; margin-top:2px;">3,600円</div>
                 </td>
                 <td>
                     <span class="journal-label">勘定科目</span>
                     <span class="journal-amount">事業主借</span>
                     <span class="journal-tax">対象外</span>
+                    <div style="font-weight:bold; margin-top:2px;">3,600円</div>
                 </td>
             </tr>
         </table>
         <p style="margin-top:10px; font-size: 0.9em;">
             💡 <strong>ポイント：</strong><br>
-            自分自身の事業の経費（IndieWorkに請求しないもの）は、通常通り適切な経費科目を選択し、<b>「課税（10%等）」</b>の税区分を適用して入力してください。
+            自分自身の事業の経費（IndieWorkに請求しないもの）は、適切な経費科目を選択し、<b>「課税（10%等）」</b>の税区分を適用して入力してください。
         </p>
     </div>
 
@@ -371,7 +365,7 @@
         振替伝票入力で一本化します。
         
         <table class="journal-table" style="margin-top: 10px;">
-            <tr><th>借方</th><th>貸方</th></tr>
+            <tr><th>借方（左側）</th><th>貸方（右側）</th></tr>
             <tr>
                 <td>
                     <span class="journal-amount">売掛金</span>
@@ -406,15 +400,17 @@
 
     <div class="info-tag tag-blue">STEP 4：◯月◯日（入金時）</div>
     <div class="example-box" style="border-color: #0056b3;">
-        <strong>【実際に振り込まれたら】</strong>
+        <strong>【実際に330,000円が振り込まれたら】</strong>
         <table class="journal-table">
-            <tr><th>借方</th><th>貸方</th></tr>
+            <tr><th>借方（左側）</th><th>貸方（右側）</th></tr>
             <tr>
                 <td>
                     <span class="journal-amount">普通預金</span>
+                    <div style="font-weight:bold; margin-top:2px;">330,000円</div>
                 </td>
                 <td>
                     <span class="journal-amount">売掛金</span>
+                    <div style="font-weight:bold; margin-top:2px;">330,000円</div>
                 </td>
             </tr>
         </table>
@@ -428,25 +424,4 @@
         ※<b>公共交通機関</b>は特例で、記載がなくても「インボイスあり」として扱います。
     </div>
 
-    <div class="example-box">
-        <strong>Q. 郵便局のレターパックにインボイス番号がないのですが？</strong><br>
-        A. 郵便切手やレターパックは、<b>「購入時（窓口・コンビニ）」ではなく「使用時」</b>に消費税が発生する特殊な扱いです。 窓口発行の受領証に番号がなくても、通常通り「荷造運搬費」として報告して問題ありません。
-    </div>
-
-    <div class="example-box" style="border: 2px solid #d63031;">
-        <strong>Q. 番号のないレシート（免税事業者）の場合、税区分はどうなりますか？</strong><br>
-        A. インボイス番号がないものは、IndieWorkで消費税控除ができないため、原則として<span class="red-text">「精算対象外（自己負担）」</span>となります。 必ず番号を確認してください。
-    </div>
-
-    <div class="warning-box">
-        <span class="warning-title">⚠️ 徹底事項</span>
-        <ol style="padding-left: 20px;">
-            <li><strong>宛名は「IndieWork合同会社」</strong></li>
-            <li><strong>インボイス番号（T番号）を必ず確認</strong></li>
-            <li><strong>帳簿の税区分は「立替金＝対象外」「売上＝課税10%」</strong></li>
-        </ol>
-    </div>
-</div>
-
-</body>
-</html>
+    <div class="example-
