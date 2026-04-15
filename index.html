@@ -82,6 +82,16 @@
             border-radius: 3px;
             margin-top: 2px;
         }
+        /* 取引先表示用スタイルを追加 */
+        .journal-partner {
+            display: block;
+            margin-top: 5px;
+            padding-top: 5px;
+            border-top: 1px dotted #dee2e6;
+            font-size: 0.85em;
+            color: #0056b3;
+            font-weight: bold;
+        }
 
         /* リンクボタン */
         .btn-link { 
@@ -290,7 +300,7 @@
 
     <div class="info-tag">STEP 1：立替金（IndieWork負担分）の入力</div>
     <div class="example-box">
-        <strong>【立替経費が発生したとき（例：宿泊料  5,300円の場合）】</strong>
+        <strong>【立替経費が発生したとき（例：宿泊料 5,300円の場合）】</strong>
         <table class="journal-table">
             <tr><th>借方（左側）</th><th>貸方（右側）</th></tr>
             <tr>
@@ -299,6 +309,7 @@
                     <span class="journal-amount">立替金</span>
                     <span class="journal-tax">対象外</span>
                     <div style="font-weight:bold; margin-top:2px;">5,300円</div>
+                    <span class="journal-partner">取引先：IndieWork合同会社</span>
                 </td>
                 <td>
                     <span class="journal-label">勘定科目</span>
@@ -310,7 +321,7 @@
         </table>
         <p style="margin-top:10px; font-size: 0.9em;">
             💡 <strong>ポイント：</strong><br>
-            IndieWorkが負担する費用を一時的に支払った場合は、勘定科目を<b>「立替金」</b>にします。 レシートが10%課税でも、自分の帳簿上は<b>「対象外」</b>で処理してください。
+            IndieWorkが負担する費用を一時的に支払った場合は、勘定科目を<b>「立替金」</b>にします。
         </p>
     </div>
 
@@ -325,6 +336,7 @@
                     <span class="journal-amount">旅費交通費</span>
                     <span class="journal-tax">課仕 10%</span>
                     <div style="font-weight:bold; margin-top:2px;">3,600円</div>
+                    <span class="journal-partner">取引先：エネオス（例）</span>
                 </td>
                 <td>
                     <span class="journal-label">勘定科目</span>
@@ -334,10 +346,6 @@
                 </td>
             </tr>
         </table>
-        <p style="margin-top:10px; font-size: 0.9em;">
-            💡 <strong>ポイント：</strong><br>
-            自分自身の事業の経費は、適切な経費科目を選択し、<b>「課税（10%等）」</b>の税区分を適用して入力してください。
-        </p>
     </div>
 
     <div class="info-tag tag-red">STEP 3：◯月◯日（請求時）※一本化の作業</div>
@@ -350,11 +358,13 @@
                     <span class="journal-amount">売掛金</span>
                     <span class="journal-tax">対象外</span>
                     <div style="font-weight:bold;">330,000円</div>
+                    <span class="journal-partner">取引先：IndieWork合同会社</span>
                 </td>
                 <td>
                     <span class="journal-amount">売上高</span>
                     <span class="journal-tax">課売 10%</span>
                     <div style="font-weight:bold;">300,000円</div>
+                    <span class="journal-partner"> </span>
                 </td>
             </tr>
             <tr>
@@ -362,17 +372,16 @@
                     <span class="journal-amount">地代家賃</span>
                     <span class="journal-tax">課仕 10%</span>
                     <div style="font-weight:bold;">20,000円</div>
+                    <span class="journal-partner"> </span>
                 </td>
                 <td>
                     <span class="journal-amount">立替金</span>
                     <span class="journal-tax">対象外</span>
                     <div style="font-weight:bold;">50,000円</div>
+                    <span class="journal-partner">取引先：IndieWork合同会社</span>
                 </td>
             </tr>
         </table>
-        <p style="margin-top:10px; font-size: 0.9em; background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #ffc9c9;">
-            💡 <strong>注意：</strong>売上高には必ず<b>「課税売上 10%」</b>を適用してください。
-        </p>
     </div>
 
     <div class="info-tag tag-blue">STEP 4：◯月◯日（入金時）</div>
@@ -385,18 +394,16 @@
                     <span class="journal-amount">普通預金</span>
                     <span class="journal-tax">対象外</span>
                     <div style="font-weight:bold; margin-top:2px;">330,000円</div>
+                    <span class="journal-partner"> </span>
                 </td>
                 <td>
                     <span class="journal-amount">売掛金</span>
                     <span class="journal-tax">対象外</span>
                     <div style="font-weight:bold; margin-top:2px;">330,000円</div>
+                    <span class="journal-partner">取引先：IndieWork合同会社</span>
                 </td>
             </tr>
         </table>
-        <p style="margin-top:10px; font-size: 0.9em;">
-            💡 <strong>ポイント：</strong><br>
-            請求していた金額（売掛金）が普通預金に入金された際の仕訳です。
-        </p>
     </div>
 
     <h2>🙋‍♂️ よくある質問（Q&A）</h2>
